@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { motion, AnimatePresence } from "motion/react";
 import {
     FiSend,
