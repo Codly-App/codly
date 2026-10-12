@@ -30,7 +30,7 @@ const footerGroups: FooterGroup[] = [
         links: [
             { id: 4, name: "Sobre", href: "/" },
             { id: 5, name: "Contato", href: "/contact" },
-            { id: 6, name: "Termos e privacidade", href: "/" },
+            { id: 6, name: "Termos e privacidade", href: "/privacysecurity" },
         ],
     },
     {
