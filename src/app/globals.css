@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
     box-sizing: border-box;
@@ -24,6 +25,19 @@
     --lavender: #ede9fe;
 }
 
+.dark {
+    color-scheme: dark;
+
+    --background: #0f0b1a;
+    --foreground: #f4f1fc;
+    --surface: #1a1330;
+    --surface-alt: #241c3d;
+    --muted: #b6a9da;
+    --border: rgba(255, 255, 255, 0.1);
+
+    --lavender: #2a2150;
+}
+
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -36,15 +50,37 @@
     --color-primary-dark: var(--primary-dark);
     --color-lavender: var(--lavender);
 }
-
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0f0b1a;
-        --foreground: #f4f1fc;
-        --surface: #1a1330;
-        --surface-alt: #241c3d;
-        --muted: #b6a9da;
-        --border: rgba(255, 255, 255, 0.1);
-    }
+@utility section-fade-alt {
+    background-image: linear-gradient(
+        to bottom,
+        var(--background) 0%,
+        var(--surface-alt) 22%,
+        var(--surface-alt) 78%,
+        var(--background) 100%
+    );
 }
- */
+
+@utility section-fade-lavender {
+    background-image: linear-gradient(
+        to bottom,
+        var(--background) 0%,
+        color-mix(in srgb, var(--lavender) 70%, var(--background)) 22%,
+        color-mix(in srgb, var(--lavender) 70%, var(--background)) 78%,
+        var(--background) 100%
+    );
+}
+@utility section-fade-dark {
+    background-image: linear-gradient(
+        to bottom,
+        var(--background) 0px,
+        color-mix(in srgb, #5b21b6 40%, var(--background)) 100px,
+        #100a1d 220px,
+        #100a1d calc(100% - 220px),
+        color-mix(in srgb, #5b21b6 40%, var(--background)) calc(100% - 100px),
+        var(--background) 100%
+    );
+}
+O roxo do
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

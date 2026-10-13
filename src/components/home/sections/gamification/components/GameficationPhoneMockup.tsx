@@ -39,12 +39,12 @@ export default function GamificationPhoneMockup() {
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="relative w-65 sm:w-70"
+                        className="relative w-65 sm:w-70 "
                     >
-                        <div className="absolute -inset-10 rounded-full bg-primary/10 blur-3xl" />
+                        <div className="absolute  -inset-10 rounded-full bg-primary/10 blur-3xl" />
 
-                        <div className="relative rounded-[2.5rem] border-10 border-[#1A1330] bg-[#1A1330] shadow-[0_40px_80px_-30px_rgba(91,33,182,0.45)]">
-                            <div className="absolute left-1/2 top-0 -translate-x-1/2 h-5 w-24 rounded-b-2xl bg-[#1A1330] z-20" />
+                        <div className="relative rounded-[2.5rem] border-10 border-black bg-[#1A1330] shadow-[0_40px_80px_-30px_rgba(91,33,182,0.45)]">
+                            <div className="absolute left-1/2 top-0 -translate-x-1/2 h-5 w-24 rounded-b-2xl bg-black z-20" />
 
                             <div className="relative flex aspect-9/19.5 flex-col overflow-hidden rounded-[1.9rem] bg-background">
                         <div className="flex items-center justify-between px-5 pt-4 text-[10px] font-semibold text-foreground">

@@ -77,7 +77,7 @@ const cardVariants: Variants = {
 
 export default function Plans() {
     return (
-        <section id="planos" className="relative w-full overflow-hidden bg-surface-alt border-y border-border">
+        <section id="planos" className="relative w-full overflow-hidden section-fade-alt">
             <Container className="py-20 sm:py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}

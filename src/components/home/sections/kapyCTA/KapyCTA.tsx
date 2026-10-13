@@ -25,8 +25,11 @@ export default function KapyCTA() {
 
     return (
         <section className="relative w-full overflow-hidden bg-[#100a1d] py-20 sm:py-24 lg:py-28">
+            
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(124,58,237,0.25),transparent_55%)]" />
             <div className="pointer-events-none absolute -right-24 -top-40 size-110 rounded-full bg-primary/20 blur-[110px]" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-44 bg-linear-to-b from-background to-transparent dark:block" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-36 bg-linear-to-t from-background to-transparent dark:block" />
 
             <div className="relative z-10 mx-auto grid w-full max-w-295 items-center gap-12 px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-14 lg:gap-20 lg:px-10 xl:px-6">
                 

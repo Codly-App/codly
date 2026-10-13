@@ -38,14 +38,16 @@ export default function Hero() {
                 aria-hidden="true"
                 animate={reduceMotion ? undefined : { x: [0, 60, 0], y: [0, -35, 0] }}
                 transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-                className="pointer-events-none absolute -left-40 top-1/4 size-125 rounded-full bg-primary/5 blur-[110px]" />
+                className="pointer-events-none absolute -left-40 top-1/4 size-125 rounded-full bg-primary/5 blur-[110px]"
+            />
 
             <motion.div
                 aria-hidden="true"
                 animate={reduceMotion ? undefined : { x: [0, -50, 0], y: [0, 40, 0] }}
                 transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
-                className="pointer-events-none absolute -right-40 bottom-0 size-125 rounded-full bg-violet-300/15 blur-[110px]" />
-
+                className="pointer-events-none absolute -right-40 bottom-1/4 size-125 rounded-full bg-violet-300/15 blur-[110px] dark:bg-primary/10"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-40 bg-linear-to-t from-background to-transparent dark:block" />
             <Container className="relative z-10 grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-16">
                 <motion.div
                     initial="hidden"

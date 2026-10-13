@@ -62,7 +62,7 @@ export default function Method() {
     };
 
     return (
-        <section id="como-funciona" className="w-full scroll-mt-20 bg-lavender/70">
+        <section id="como-funciona" className="w-full scroll-mt-20 section-fade-lavender">
             <Container className="py-20 sm:py-24">
 
                 <motion.div
