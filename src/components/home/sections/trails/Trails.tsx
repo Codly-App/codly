@@ -1,30 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { FaDatabase, FaArrowRight, FaRoute } from "react-icons/fa6";
 import { SiJavascript } from "react-icons/si";
 import Container from "@/ui/Container";
 
-function highlight(code: string) {
-    let html = code
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-
-    html = html.replace(/(`[^`]*`|"[^"]*"|'[^']*')/g, '<span class="text-[#8bd5a0]">$1</span>');
-    html = html.replace(/(\/\/.*$)/gm, '<span class="text-[#6b6584]">$1</span>');
-
+function HighlightedCode({ code }: { code: string }) {
     const keywords = [
         "INNER JOIN", "LEFT JOIN", "PARTITION BY", "GROUP BY", "ORDER BY",
         "SELECT", "FROM", "WHERE", "HAVING", "LIMIT", "OVER", "RANK",
         "COUNT", "AS", "DESC", "ASC", "function", "async", "await",
         "const", "let", "return", "throw", "new", "if", "fetch", "console",
     ];
-    const pattern = new RegExp(`\\b(${keywords.sort((a, b) => b.length - a.length).join("|")})\\b`, "g");
-    html = html.replace(pattern, '<span class="text-[#c792ea] font-semibold">$1</span>');
 
-    return html;
+    const pattern = new RegExp(
+        `(\`[^\`]*\`|"[^"]*"|'[^']*'|\\/\\/.*$\vert{}\\b(?:${keywords.sort((a, b) => b.length - a.length).join("|")})\\b)`,
+        "gm"
+    );
+
+    const parts = code.split(pattern);
+
+    return (
+        <code>
+            {parts.map((part, index) => {
+                // Índices pares são texto comum (não deram match em nada do nosso Regex)
+                if (index % 2 === 0) {
+                    return <Fragment key={index}>{part}</Fragment>;
+                }
+
+                // Índices ímpares são os matches. Vamos estilizá-los:
+                
+                // 1. Strings (começam com aspas ou crase)
+                if (/^[`"']/.test(part)) {
+                    return <span key={index} className="text-[#8bd5a0]">{part}</span>;
+                }
+                
+                // 2. Comentários (começam com //)
+                if (part.startsWith("//")) {
+                    return <span key={index} className="text-[#6b6584]">{part}</span>;
+                }
+                
+                // 3. Palavras-chave (o que sobrou)
+                return <span key={index} className="text-[#c792ea] font-semibold">{part}</span>;
+            })}
+        </code>
+    );
 }
 
 type Level = {
@@ -180,7 +201,7 @@ function CourseWindow({ course }: { course: Course }) {
                         transition={{ duration: 0.25 }}
                         className="px-4 py-4 text-[12.5px] leading-6 font-mono text-[#e4e1f0] overflow-x-auto"
                     >
-                        <code dangerouslySetInnerHTML={{ __html: highlight(level.code) }} />
+                        <HighlightedCode code={level.code} />
                     </motion.pre>
                 </AnimatePresence>
             </div>

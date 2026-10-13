@@ -7,7 +7,7 @@ type Infos = Readonly<{
 export default function SectionInfo({icon, title, subTitle}: Infos) {
     return (
         <>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-lavender px-3 py-1.5 text-xs font-semibold text-primary">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-lavender px-3 py-1.5 text-xs font-semibold text-primary dark:text-white">
                 {!!icon && icon}
                 <span>{!!subTitle && subTitle}</span>
             </div>

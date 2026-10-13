@@ -1,23 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function Buttons() {
-    const [isDark, setIsDark] = useState(false);
+    const { isDark, toggleTheme } = useTheme();
 
-    useEffect(() => {
-        const darkMode = document.documentElement.classList.contains("dark");
-        setIsDark(darkMode);
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme = !isDark;
-
-        setIsDark(newTheme);
-        document.documentElement.classList.toggle("dark", newTheme);
-    };
 
     return (
         <div className="flex items-center gap-2">

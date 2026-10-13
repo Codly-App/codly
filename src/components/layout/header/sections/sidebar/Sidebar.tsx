@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { FiMenu, FiX, FiArrowRight, FiMoon, FiSun } from "react-icons/fi";
+import { useTheme } from "@/hooks/useTheme";
 
 type NavItem = {
     id: number;
@@ -20,13 +21,8 @@ const navLinks: NavItem[] = [
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isDark, setIsDark] = useState(false);
+    const { isDark, toggleTheme } = useTheme();
     const reduceMotion = useReducedMotion();
-
-    useEffect(() => {
-        const darkMode = document.documentElement.classList.contains("dark");
-        setIsDark(darkMode);
-    }, []);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -48,11 +44,6 @@ export default function Sidebar() {
 
     const closeMenu = () => setIsOpen(false);
 
-    const toggleTheme = () => {
-        const nextTheme = !isDark;
-        setIsDark(nextTheme);
-        document.documentElement.classList.toggle("dark", nextTheme);
-    };
 
     return (
         <>
