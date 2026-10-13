@@ -21,7 +21,7 @@ const footerGroups: FooterGroup[] = [
         links: [
             { id: 1, name: "Cursos", href: "/#cursos" },
             { id: 2, name: "Planos", href: "/#planos" },
-            { id: 3, name: "Gamificação", href: "/#gamificacao" },
+            { id: 3, name: "Gamificação", href: "/gamification" },
         ],
     },
     {
@@ -50,7 +50,7 @@ export default async function Footer() {
 
     return (
         <footer className="w-full border-t border-border bg-background">
-            <div className="mx-auto w-full max-w-295 px-6 pt-14 pb-6 lg:px-10 xl:px-6">
+            <div className="mx-auto w-400 max-w-full pt-14 pb-6">
                 <div className="grid grid-cols-1 gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:gap-10">
                     <div className="flex max-w-xs flex-col items-start">
                         <Logo />

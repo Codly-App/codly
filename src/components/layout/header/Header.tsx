@@ -7,7 +7,7 @@ import Sidebar from "./sections/sidebar/Sidebar";
 export default function Header() {
     return (
         <header className="fixed top-0 left-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-xl">
-            <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:h-18 sm:px-6 lg:h-20 lg:justify-around lg:px-8">
+            <div className="mx-auto flex h-16 w-400 max-w-full items-center justify-between sm:h-18 lg:h-20">
                 <Logo />
 
                 <div className="hidden lg:flex">

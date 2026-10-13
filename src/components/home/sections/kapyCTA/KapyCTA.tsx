@@ -28,7 +28,7 @@ export default function KapyCTA() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(124,58,237,0.25),transparent_55%)]" />
             <div className="pointer-events-none absolute -right-24 -top-40 size-110 rounded-full bg-primary/20 blur-[110px]" />
 
-            <div className="relative z-10 mx-auto grid w-400 max-w-6xl items-center gap-12 px-5 py-20 sm:px-6 sm:py-24 md:grid-cols-[0.85fr_1.15fr] md:gap-14 lg:gap-20 lg:px-8 lg:py-28">
+            <div className="relative z-10 mx-auto grid w-full max-w-295 items-center gap-12 px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-14 lg:gap-20 lg:px-10 xl:px-6">
                 
                 <motion.div
                     variants={fadeLeft}

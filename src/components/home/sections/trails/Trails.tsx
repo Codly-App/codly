@@ -1,4 +1,3 @@
-// src/components/home/sections/trails/Trails.tsx
 "use client";
 
 import { useState } from "react";
@@ -200,7 +199,7 @@ function CourseWindow({ course }: { course: Course }) {
 export default function Trails() {
     return (
         <section id="cursos" className="relative w-full overflow-hidden bg-surface-alt border-y border-border">
-            <div className="mx-auto w-400 max-w-6xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}

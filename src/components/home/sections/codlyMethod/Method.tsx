@@ -61,8 +61,8 @@ export default function Method() {
     };
 
     return (
-        <section id="como-funciona" className="w-full scroll-mt-20 bg-lavender/70 py-20 sm:py-24">
-            <div className="mx-auto w-400 max-w-6xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+        <section id="como-funciona" className="w-full scroll-mt-20 bg-lavender/70">
+            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
 
                 <motion.div
                     initial="hidden"

@@ -26,8 +26,8 @@ const navigation = [
 
 function PolicySection({ id, number, title, children }: PolicySectionProps) {
     return (
-        <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-28">
-            <div className="mb-4 flex items-center gap-3">
+        <section className="w-full bg-background">
+            <div className="mx-auto grid w-400 max-w-full items-start gap-8 pb-20 pt-10 sm:pb-28 sm:pt-14 md:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-lavender text-xs font-bold text-primary">
                     {number}
                 </span>

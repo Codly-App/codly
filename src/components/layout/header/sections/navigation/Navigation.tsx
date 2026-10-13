@@ -10,7 +10,7 @@ const navLinks: ItemNav[] = [
     { id: 1, name: "Cursos", href: "#cursos" },
     { id: 2, name: "Sobre", href: "#cursos" },
     { id: 3, name: "Como funciona", href: "#como-funciona" },
-    { id: 4, name: "Gamificação", href: "#gamificacao" },
+    { id: 4, name: "Gamificação", href: "/gamification" },
     { id: 5, name: "Planos", href: "#planos" },
 ];
 

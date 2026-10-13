@@ -14,12 +14,12 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative w-full overflow-hidden border-b border-border bg-background py-20 sm:py-24 lg:py-28">
+        <section className="relative w-full overflow-hidden border-b border-border bg-background">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(124,58,237,0.08),transparent_50%),radial-gradient(ellipse_at_85%_75%,rgba(167,139,250,0.1),transparent_45%)]" />
 
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(124,58,237,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(124,58,237,0.025)_1px,transparent_1px)] bg-size-[64px_64px] mask-[linear-gradient(to_bottom,transparent,black_25%,transparent_95%)]" />
 
-            <div className="relative z-10 mx-auto flex w-full max-w-295 flex-col items-start px-6 lg:px-10 xl:px-6">
+            <div className="relative z-10 mx-auto flex w-400 max-w-full flex-col items-start py-20 sm:py-24 lg:py-28">
                 <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-3xl">
                     <motion.div variants={fadeUp}>
                         <Link href="/" className="group mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-primary">

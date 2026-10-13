@@ -52,8 +52,8 @@ export default function LessonFlow() {
     };
 
     return (
-        <section id="formato-licao" className="relative w-full scroll-mt-20 overflow-hidden bg-background py-20 sm:py-24">
-            <div className="mx-auto w-400 max-w-6xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+        <section id="formato-licao" className="relative w-full scroll-mt-20 overflow-hidden bg-background">
+            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-2xl">
                     <motion.div variants={fadeUp} className="max-w-xl">
                         <SectionInfo

@@ -45,7 +45,7 @@ export default function Hero() {
                 transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
                 className="pointer-events-none absolute -right-40 bottom-0 size-125 rounded-full bg-violet-300/15 blur-[110px]" />
 
-            <div className="relative z-10 mx-auto grid min-h-[calc(100vh-5rem)] w-full max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:px-8 lg:py-16">
+            <div className="relative z-10 mx-auto grid min-h-[calc(100vh-5rem)] w-400 max-w-full items-center gap-10 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-16">
                 <motion.div
                     initial="hidden"
                     animate="visible"

@@ -2,7 +2,7 @@
 
 import SectionInfo from "@/ui/SectionInfo";
 import { motion } from "motion/react";
-import { FaFire } from "react-icons/fa6";
+import { FaArrowRight, FaFire } from "react-icons/fa6";
 import { FiHome, FiBookOpen, FiUsers, FiUser, FiBell, FiPlay, FiCheck } from "react-icons/fi";
 
 const features = [
@@ -27,25 +27,25 @@ const features = [
 export default function GamificationPhoneMockup() {
     return (
         <section id="gamificacao" className="relative w-full overflow-hidden bg-background select-none">
-            <div className="mx-auto w-400 max-w-6xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div className="mx-auto w-400 max-w-full py-20 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex justify-center lg:order-2"
+                    className="flex justify-end lg:order-2"
                 >
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="relative w-[260px] sm:w-[280px]"
+                        className="relative w-65 sm:w-70"
                     >
                         <div className="absolute -inset-10 rounded-full bg-primary/10 blur-3xl" />
 
-                        <div className="relative rounded-[2.5rem] border-[10px] border-[#1A1330] bg-[#1A1330] shadow-[0_40px_80px_-30px_rgba(91,33,182,0.45)]">
+                        <div className="relative rounded-[2.5rem] border-10 border-[#1A1330] bg-[#1A1330] shadow-[0_40px_80px_-30px_rgba(91,33,182,0.45)]">
                             <div className="absolute left-1/2 top-0 -translate-x-1/2 h-5 w-24 rounded-b-2xl bg-[#1A1330] z-20" />
 
-                            <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[1.9rem] bg-background">
+                            <div className="relative flex aspect-9/19.5 flex-col overflow-hidden rounded-[1.9rem] bg-background">
                         <div className="flex items-center justify-between px-5 pt-4 text-[10px] font-semibold text-foreground">
                             <span>9:41</span>
                             <span className="text-muted">●●●</span>
@@ -152,7 +152,6 @@ export default function GamificationPhoneMockup() {
 
                         <div className="flex-1" />
 
-                        {/* bottom nav */}
                         <div className="flex items-center justify-around border-t border-border/60 bg-surface px-5 pb-3 pt-2.5">
                             <div className="flex flex-col items-center gap-1 text-primary">
                                 <FiHome size={17} />
@@ -176,7 +175,6 @@ export default function GamificationPhoneMockup() {
                     </motion.div>
                 </motion.div>
 
-                {/* Texto */}
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -197,6 +195,14 @@ export default function GamificationPhoneMockup() {
                             </div>
                         ))}
                     </div>
+                    <motion.a
+                        href="/gamification"
+                        whileHover={{ x: 4 }}
+                        className="self-start max-w-50 flex items-center gap-2 font-bold text-sm px-5 py-2.5 hover:bg-primary hover:text-white border-primary-dark rounded-3xl border-2 transition-colors duration-75"
+                    >
+                        Mais detalhes sobre
+                        <FaArrowRight size={12} />
+                    </motion.a>
                 </motion.div>
             </div>
         </section>

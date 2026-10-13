@@ -1,7 +1,7 @@
 type Infos = Readonly<{
-    icon: React.ReactNode;
-    title: string;
-    subTitle: string;
+    icon?: React.ReactNode;
+    title?: string;
+    subTitle?: string;
 }>;
 
 export default function SectionInfo({icon, title, subTitle}: Infos) {
