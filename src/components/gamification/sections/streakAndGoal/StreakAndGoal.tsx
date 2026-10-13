@@ -21,7 +21,7 @@ export function longestRun(list: boolean[]) {
 
 export default function StreakAndGoal() {
     return (
-        <section className="relative w-full overflow-hidden bg-background border-b border-border">
+        <section className="relative w-full overflow-hidden bg-backgroundborder">
             <Container className="py-20 sm:py-24">
                 <div className="max-w-xl">
                     <SectionInfo icon={<FiTarget size={13} />} subTitle="Rotina" title="Constância vale mais que pressa" />

@@ -34,7 +34,7 @@ export default function FriendsRanking() {
     const top = sorted[0][metric];
 
     return (
-        <section className="relative w-full overflow-hidden bg-background border-b border-border">
+        <section className="relative w-full overflow-hidden bg-background">
             <Container className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
                 <div>
                     <SectionInfo icon={<FiUsers size={13} />} subTitle="Amigos e ranking" title="Estudar fica melhor com companhia" />

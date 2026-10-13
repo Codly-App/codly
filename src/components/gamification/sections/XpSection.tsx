@@ -40,7 +40,7 @@ export default function XpSection() {
     const reached = xp >= GOAL;
 
     return (
-        <section className="relative w-full overflow-hidden bg-surface-alt border-b border-border">
+        <section className="relative w-full overflow-hidden section-fade-alt">
             <Container className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
                 <div>
                     <SectionInfo icon={<FiZap size={13} />} subTitle="XP" title="Cada lição vale pontos" />

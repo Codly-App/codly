@@ -15,7 +15,7 @@ const achievements = [
 
 export default function Achievements() {
     return (
-        <section className="relative w-full overflow-hidden bg-surface-alt border-b border-border">
+        <section className="relative w-full overflow-hidden section-fade-alt">
             <Container className="py-20 sm:py-24">
                 <div className="max-w-xl">
                     <SectionInfo icon={<FiAward size={13} />} subTitle="Conquistas" title="Marcos que mostram sua evolução" />
