@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { FiInfo, FiShield, FiArrowUpRight, FiMail } from "react-icons/fi";
 import type { ReactNode } from "react";
+import Container from "@/ui/Container";
 
 type PolicySectionProps = {
     id: string;
@@ -26,8 +27,8 @@ const navigation = [
 
 function PolicySection({ id, number, title, children }: PolicySectionProps) {
     return (
-        <section className="w-full bg-background">
-            <div className="mx-auto grid w-400 max-w-full items-start gap-8 pb-20 pt-10 sm:pb-28 sm:pt-14 md:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
+        <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-28">
+            <div className="mb-4 flex items-center gap-3">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-lavender text-xs font-bold text-primary">
                     {number}
                 </span>
@@ -46,8 +47,8 @@ function PolicySection({ id, number, title, children }: PolicySectionProps) {
 
 export default function Policy() {
     return (
-        <section className="w-full bg-background pb-20 pt-10 sm:pb-28 sm:pt-14">
-            <div className="mx-auto grid w-full max-w-295 items-start gap-8 px-6 md:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 lg:px-10 xl:px-6">
+        <section className="w-full bg-background">
+            <Container className="grid items-start gap-8 pb-20 pt-10 sm:pb-28 sm:pt-14 md:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
 
                 <aside className="md:sticky md:top-28">
                     <nav aria-label="Índice da Política de Privacidade" className="rounded-2xl border border-border bg-surface p-5 shadow-[0_8px_30px_rgba(26,19,48,0.025)]">
@@ -313,7 +314,7 @@ export default function Policy() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

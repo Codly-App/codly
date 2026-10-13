@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { FiAward, FiLock } from "react-icons/fi";
 import { FaFire, FaTrophy, FaBookOpen, FaBolt } from "react-icons/fa6";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 
 const achievements = [
     { icon: <FaBookOpen size={22} />, title: "Primeira lição", text: "Conclua sua primeira lição em qualquer trilha.", progress: 1, total: 1, unit: "lição" },
@@ -15,7 +16,7 @@ const achievements = [
 export default function Achievements() {
     return (
         <section className="relative w-full overflow-hidden bg-surface-alt border-b border-border">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
                 <div className="max-w-xl">
                     <SectionInfo icon={<FiAward size={13} />} subTitle="Conquistas" title="Marcos que mostram sua evolução" />
                     <p className="-mt-4 mb-10 text-base leading-relaxed text-muted">
@@ -83,7 +84,7 @@ export default function Achievements() {
                         );
                     })}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

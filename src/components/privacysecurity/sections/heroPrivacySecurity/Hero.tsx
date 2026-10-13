@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiArrowLeft, FiLock, FiShield, FiCheckCircle } from "react-icons/fi";
+import Container from "@/ui/Container";
 
 export default function Hero() {
     const reduceMotion = useReducedMotion();
@@ -19,7 +20,7 @@ export default function Hero() {
 
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(124,58,237,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(124,58,237,0.025)_1px,transparent_1px)] bg-size-[64px_64px] mask-[linear-gradient(to_bottom,transparent,black_25%,transparent_95%)]" />
 
-            <div className="relative z-10 mx-auto flex w-400 max-w-full flex-col items-start py-20 sm:py-24 lg:py-28">
+            <Container className="relative z-10 flex flex-col items-start py-20 sm:py-24 lg:py-28">
                 <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-3xl">
                     <motion.div variants={fadeUp}>
                         <Link href="/" className="group mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-primary">
@@ -68,7 +69,7 @@ export default function Hero() {
                         </div>
                     </div>
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

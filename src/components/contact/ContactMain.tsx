@@ -13,6 +13,7 @@ import {
     FiCheck,
 } from "react-icons/fi";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 import FloatingContactIcons from "./sections/FloatingContactIcons";
 import FrequentlyQuestions from "./sections/FrequentlyQuestions";
 import KapyContactChat from "./sections/KapyContactChat";
@@ -39,7 +40,7 @@ export default function ContatoMain() {
             <div className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-primary/15 blur-3xl" />
             <div className="pointer-events-none absolute -left-24 bottom-0 size-72 rounded-full bg-primary/10 blur-3xl" />
 
-            <div className="relative mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="relative py-20 sm:py-24">
                 <div className="mb-12 flex items-start justify-between gap-10">
                     <div className="max-w-xl">
                         <SectionInfo icon={<FiMail size={13} />} subTitle="Contato" title="Fale com a gente" />
@@ -163,7 +164,7 @@ export default function ContatoMain() {
                         <FrequentlyQuestions openFaq={openFaq} setOpenFaq={setOpenFaq}/>
                     </motion.div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

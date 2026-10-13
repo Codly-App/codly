@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import Logo from "@/components/layout/header/sections/logo/Logo";
+import Container from "@/ui/Container";
 
 type FooterLink = {
     id: number;
@@ -50,7 +51,7 @@ export default async function Footer() {
 
     return (
         <footer className="w-full border-t border-border bg-background">
-            <div className="mx-auto w-400 max-w-full pt-14 pb-6">
+            <Container className="pt-14 pb-6">
                 <div className="grid grid-cols-1 gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:gap-10">
                     <div className="flex max-w-xs flex-col items-start">
                         <Logo />
@@ -92,7 +93,7 @@ export default async function Footer() {
                         Feito com carinho e capivaras.
                     </p>
                 </div>
-            </div>
+            </Container>
         </footer>
     );
 }

@@ -1,5 +1,6 @@
 "use client";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import type { IconType } from "react-icons";
 import { FiZap, FiTrendingUp, FiCreditCard, FiSmartphone, FiLayers } from "react-icons/fi";
@@ -62,7 +63,7 @@ export default function Method() {
 
     return (
         <section id="como-funciona" className="w-full scroll-mt-20 bg-lavender/70">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
 
                 <motion.div
                     initial="hidden"
@@ -115,7 +116,7 @@ export default function Method() {
                     })}
                 </motion.div>
 
-            </div>
+            </Container>
         </section>
     );
 }

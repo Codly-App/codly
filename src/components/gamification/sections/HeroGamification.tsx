@@ -4,6 +4,7 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiZap, FiTarget, FiUsers } from "react-icons/fi";
 import { FaFire, FaTrophy } from "react-icons/fa6";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 
 const floaters = [
     { icon: <FiZap size={18} />, title: "+40 XP", text: "Lição concluída", className: "left-0 top-4", delay: 0, tone: "bg-lavender text-primary" },
@@ -23,7 +24,7 @@ export default function HeroGamification() {
         <section className="relative w-full overflow-hidden border-b border-border bg-background">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(124,58,237,0.08),transparent_50%),radial-gradient(ellipse_at_85%_75%,rgba(167,139,250,0.1),transparent_45%)]" />
 
-            <div className="relative mx-auto grid w-400 max-w-full items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
+            <Container className="relative grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
                 <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-2xl">
 
 
@@ -59,7 +60,7 @@ export default function HeroGamification() {
                         </motion.div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

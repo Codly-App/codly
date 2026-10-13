@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { FiCheck, FiTag } from "react-icons/fi";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 
 type Plan = {
     name: string;
@@ -77,7 +78,7 @@ const cardVariants: Variants = {
 export default function Plans() {
     return (
         <section id="planos" className="relative w-full overflow-hidden bg-surface-alt border-y border-border">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +151,7 @@ export default function Plans() {
                         </motion.div>
                     ))}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

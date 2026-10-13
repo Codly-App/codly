@@ -1,6 +1,7 @@
 "use client";
 
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiBookOpen } from "react-icons/fi";
 
@@ -53,7 +54,7 @@ export default function LessonFlow() {
 
     return (
         <section id="formato-licao" className="relative w-full scroll-mt-20 overflow-hidden bg-background">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-2xl">
                     <motion.div variants={fadeUp} className="max-w-xl">
                         <SectionInfo
@@ -97,7 +98,7 @@ export default function LessonFlow() {
                         </motion.article>
                     ))}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

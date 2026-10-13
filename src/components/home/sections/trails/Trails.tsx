@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { FaDatabase, FaArrowRight, FaRoute } from "react-icons/fa6";
 import { SiJavascript } from "react-icons/si";
+import Container from "@/ui/Container";
 
 function highlight(code: string) {
     let html = code
@@ -199,7 +200,7 @@ function CourseWindow({ course }: { course: Course }) {
 export default function Trails() {
     return (
         <section id="cursos" className="relative w-full overflow-hidden bg-surface-alt border-y border-border">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -230,7 +231,7 @@ export default function Trails() {
                         <CourseWindow key={course.title} course={course} />
                     ))}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

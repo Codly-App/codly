@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { FiUsers, FiUserPlus, FiCheckCircle, FiBarChart2, FiZap } from "react-icons/fi";
 import { FaFire } from "react-icons/fa6";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 
 type Metric = "xp" | "streak";
 
@@ -34,7 +35,7 @@ export default function FriendsRanking() {
 
     return (
         <section className="relative w-full overflow-hidden bg-background border-b border-border">
-            <div className="mx-auto grid w-400 max-w-full items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
+            <Container className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
                 <div>
                     <SectionInfo icon={<FiUsers size={13} />} subTitle="Amigos e ranking" title="Estudar fica melhor com companhia" />
                     <p className="-mt-4 mb-8 max-w-md text-base leading-relaxed text-muted">
@@ -126,7 +127,7 @@ export default function FriendsRanking() {
                         ))}
                     </div>
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

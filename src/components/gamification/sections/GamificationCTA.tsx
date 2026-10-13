@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { FiArrowRight } from "react-icons/fi";
+import Container from "@/ui/Container";
 
 export default function GamificationCTA() {
     return (
@@ -10,12 +11,13 @@ export default function GamificationCTA() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(124,58,237,0.25),transparent_55%)]" />
             <div className="pointer-events-none absolute -right-24 -top-40 size-110 rounded-full bg-primary/20 blur-[110px]" />
 
+            <Container className="relative py-20 sm:py-24">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7 }}
-                className="relative mx-auto w-400 max-w-full py-20 text-center sm:py-24"
+                className="text-center"
             >
                 <h2 className="mx-auto max-w-2xl text-3xl font-extrabold leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl lg:text-[44px]">
                     Pronto para transformar estudo em hábito?
@@ -33,6 +35,7 @@ export default function GamificationCTA() {
                     </Link>
                 </div>
             </motion.div>
+            </Container>
         </section>
     );
 }

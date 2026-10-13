@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import Container from "@/ui/Container";
 
 export default function Hero() {
     const reduceMotion = useReducedMotion();
@@ -45,7 +46,7 @@ export default function Hero() {
                 transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
                 className="pointer-events-none absolute -right-40 bottom-0 size-125 rounded-full bg-violet-300/15 blur-[110px]" />
 
-            <div className="relative z-10 mx-auto grid min-h-[calc(100vh-5rem)] w-400 max-w-full items-center gap-10 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-16">
+            <Container className="relative z-10 grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-16">
                 <motion.div
                     initial="hidden"
                     animate="visible"
@@ -118,7 +119,7 @@ export default function Hero() {
                         </motion.div>
                     </div>
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

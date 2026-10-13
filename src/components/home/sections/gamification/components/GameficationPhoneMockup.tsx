@@ -1,6 +1,7 @@
 "use client";
 
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 import { motion } from "motion/react";
 import { FaArrowRight, FaFire } from "react-icons/fa6";
 import { FiHome, FiBookOpen, FiUsers, FiUser, FiBell, FiPlay, FiCheck } from "react-icons/fi";
@@ -27,7 +28,7 @@ const features = [
 export default function GamificationPhoneMockup() {
     return (
         <section id="gamificacao" className="relative w-full overflow-hidden bg-background select-none">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <Container className="py-20 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +88,7 @@ export default function GamificationPhoneMockup() {
 
                             <div className="mt-3 flex justify-between">
                                 {["S", "T", "Q", "Q", "S", "S", "D"].map((d, i) => (
-                                    <div key={i} className="flex flex-col items-center gap-1">
+                                    <div key={d} className="flex flex-col items-center gap-1">
                                         <span className="text-[8px] text-white/60">{d}</span>
                                         <span
                                             className={`flex size-5 items-center justify-center rounded-full ${
@@ -204,7 +205,7 @@ export default function GamificationPhoneMockup() {
                         <FaArrowRight size={12} />
                     </motion.a>
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

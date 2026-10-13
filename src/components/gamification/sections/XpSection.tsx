@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
 import { FiZap, FiCheckCircle, FiAward } from "react-icons/fi";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 
 const rules = [
     { title: "Lição concluída", text: "Cada lição finalizada rende XP, mesmo que você erre algum exercício." },
@@ -40,7 +41,7 @@ export default function XpSection() {
 
     return (
         <section className="relative w-full overflow-hidden bg-surface-alt border-b border-border">
-            <div className="mx-auto grid w-400 max-w-full items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
+            <Container className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
                 <div>
                     <SectionInfo icon={<FiZap size={13} />} subTitle="XP" title="Cada lição vale pontos" />
                     <p className="-mt-4 mb-8 max-w-md text-base leading-relaxed text-muted">
@@ -139,7 +140,7 @@ export default function XpSection() {
                         </motion.button>
                     )}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

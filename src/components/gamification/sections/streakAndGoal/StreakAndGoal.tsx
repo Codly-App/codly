@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { FiTarget } from "react-icons/fi";
 import SectionInfo from "@/ui/SectionInfo";
+import Container from "@/ui/Container";
 import GoalCard from "./GoalCard";
 import StreakCard from "./StreakCard";
 
@@ -21,7 +22,7 @@ export function longestRun(list: boolean[]) {
 export default function StreakAndGoal() {
     return (
         <section className="relative w-full overflow-hidden bg-background border-b border-border">
-            <div className="mx-auto w-400 max-w-full py-20 sm:py-24">
+            <Container className="py-20 sm:py-24">
                 <div className="max-w-xl">
                     <SectionInfo icon={<FiTarget size={13} />} subTitle="Rotina" title="Constância vale mais que pressa" />
                     <p className="-mt-4 mb-10 text-base leading-relaxed text-muted">
@@ -39,7 +40,7 @@ export default function StreakAndGoal() {
                     <StreakCard />
                     <GoalCard />
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }
