@@ -6,6 +6,7 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import Container from "@/ui/Container";
+import SectionInfo from "@/ui/SectionInfo";
 
 export default function Hero() {
     const reduceMotion = useReducedMotion();
@@ -54,10 +55,7 @@ export default function Hero() {
                     animate="visible"
                     transition={{ staggerChildren: reduceMotion ? 0 : 0.13 }}
                     className="flex min-w-0 max-w-xl flex-col items-start">
-                    <motion.div variants={fadeUp} className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-lavender px-3 py-1.5 text-xs font-semibold text-primary">
-                        <AiOutlineThunderbolt size={15} />
-                        <span>Nova trilha de estudos</span>
-                    </motion.div>
+                    <SectionInfo icon={<AiOutlineThunderbolt size={15} />} subTitle="Nova trilha de estudos"/>
 
                     <motion.h1 variants={fadeUp} className="max-w-xl text-[42px] font-extrabold leading-[1.06] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-[4.2rem]">
                         Aprenda a programar <span className="text-primary">todo dia</span>, em lições curtas.

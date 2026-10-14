@@ -5,6 +5,7 @@ import { motion, AnimatePresence, type Variants } from "motion/react";
 import { FaDatabase, FaArrowRight, FaRoute } from "react-icons/fa6";
 import { SiJavascript } from "react-icons/si";
 import Container from "@/ui/Container";
+import SectionInfo from "@/ui/SectionInfo";
 
 function HighlightedCode({ code }: { code: string }) {
     const keywords = [
@@ -24,24 +25,20 @@ function HighlightedCode({ code }: { code: string }) {
     return (
         <code>
             {parts.map((part, index) => {
-                // Índices pares são texto comum (não deram match em nada do nosso Regex)
                 if (index % 2 === 0) {
                     return <Fragment key={index}>{part}</Fragment>;
                 }
 
-                // Índices ímpares são os matches. Vamos estilizá-los:
-                
-                // 1. Strings (começam com aspas ou crase)
+
                 if (/^[`"']/.test(part)) {
                     return <span key={index} className="text-[#8bd5a0]">{part}</span>;
                 }
                 
-                // 2. Comentários (começam com //)
+
                 if (part.startsWith("//")) {
                     return <span key={index} className="text-[#6b6584]">{part}</span>;
                 }
                 
-                // 3. Palavras-chave (o que sobrou)
                 return <span key={index} className="text-[#c792ea] font-semibold">{part}</span>;
             })}
         </code>
@@ -209,7 +206,7 @@ function CourseWindow({ course }: { course: Course }) {
             <motion.a
                 href="#planos"
                 whileHover={{ x: 4 }}
-                className="self-start flex items-center gap-2 font-bold text-sm px-5 py-2.5 hover:bg-primary hover:text-white hover: text-primary-dark border-primary-dark rounded-full border-2 transition-colors duration-75"
+                className="self-start flex items-center gap-2 font-bold text-sm px-5 py-2.5 hover:bg-primary hover:text-white hover: text-primary-dark dark:text-white border-primary-dark rounded-full border-2 transition-colors duration-75"
             >
                 Começar trilha de {course.title}
                 <FaArrowRight size={12} />
@@ -229,13 +226,7 @@ export default function Trails() {
                     transition={{ duration: 0.5 }}
                     className="max-w-xl mb-12"
                 >
-                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-lavender px-3 py-1.5 text-xs font-semibold text-primary">
-                        <FaRoute size={13} />
-                        <span>Trilhas de lançamento</span>
-                    </div>
-                    <h2 className="font-bold text-3xl sm:text-4xl mb-3 tracking-tight text-foreground">
-                        SQL e JavaScript, do zero ao avançado
-                    </h2>
+                    <SectionInfo icon={<FaRoute size={13} />} subTitle="Trilhas de lançamento" title="SQL e JavaScript, do zero ao avançado"/>
                     <p className="text-muted text-base leading-relaxed">
                         Troque de nível e veja o tipo de código que você vai escrever em cada etapa da trilha.
                     </p>

@@ -99,7 +99,7 @@ export default function Sidebar() {
                                     <ul className="flex flex-col gap-1.5">
                                         {navLinks.map((item) => (
                                             <li key={item.id}>
-                                                <Link href={item.href} onClick={closeMenu} className="group flex items-center justify-between rounded-xl px-3 py-3.5 text-sm font-semibold text-foreground transition-colors duration-300 hover:bg-lavender hover:text-primary">
+                                                <Link href={item.href} onClick={closeMenu} className="group flex items-center justify-between rounded-xl px-3 py-3.5 text-sm font-semibold text-foreground transition-colors duration-300 hover:bg-lavender hover:text-primary dark:hover:text-white">
                                                     {item.name}
                                                     <FiArrowRight size={16} className="text-muted/60 transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
                                                 </Link>

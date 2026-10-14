@@ -81,7 +81,7 @@ export default function KapyCTA() {
                         variants={fadeUp}
                         transition={{ duration: 0.7, ease: "easeOut" }}
                         className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-                        <Link href="/cadastro" className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-primary-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-lavender hover:shadow-[0_10px_30px_rgba(124,58,237,0.2)]">
+                        <Link href="/cadastro" className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-primary-dark transition-all dark:hover:text-white duration-300 hover:-translate-y-0.5 hover:bg-lavender hover:shadow-[0_10px_30px_rgba(124,58,237,0.2)]">
                             Criar conta grátis
                             <FiArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
