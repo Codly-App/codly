@@ -226,7 +226,7 @@ export default function Trails() {
                     transition={{ duration: 0.5 }}
                     className="max-w-xl mb-12"
                 >
-                    <SectionInfo icon={<FaRoute size={13} />} subTitle="Trilhas de lançamento" title="SQL e JavaScript, do zero ao avançado"/>
+                    <SectionInfo icon={<FaRoute size={13} />} subTitle="Trilhas de lançamento" title="SQL, JavaScript e muito mais, do zero ao avançado"/>
                     <p className="text-muted text-base leading-relaxed">
                         Troque de nível e veja o tipo de código que você vai escrever em cada etapa da trilha.
                     </p>

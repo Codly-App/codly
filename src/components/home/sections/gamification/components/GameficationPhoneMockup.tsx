@@ -25,6 +25,16 @@ const features = [
     },
 ];
 
+const weekDays = [
+    { id: "seg", label: "S", done: true },
+    { id: "ter", label: "T", done: true },
+    { id: "qua", label: "Q", done: true },
+    { id: "qui", label: "Q", done: true },
+    { id: "sex", label: "S", done: true },
+    { id: "sab", label: "S", done: false },
+    { id: "dom", label: "D", done: false },
+];
+
 export default function GamificationPhoneMockup() {
     return (
         <section id="gamificacao" className="relative w-full overflow-hidden bg-background select-none">
@@ -87,12 +97,12 @@ export default function GamificationPhoneMockup() {
                             </div>
 
                             <div className="mt-3 flex justify-between">
-                                {["S", "T", "Q", "Q", "S", "S", "D"].map((d, i) => (
-                                    <div key={d} className="flex flex-col items-center gap-1">
-                                        <span className="text-[8px] text-white/60">{d}</span>
+                               {weekDays.map((d) => (
+                                    <div key={d.id} className="flex flex-col items-center gap-1">
+                                        <span className="text-[8px] text-white/60">{d.label}</span>
                                         <span
                                             className={`flex size-5 items-center justify-center rounded-full ${
-                                                i < 5 ? "bg-white text-primary" : "bg-white/15 text-transparent"
+                                                d.done ? "bg-white text-primary" : "bg-white/15 text-transparent"
                                             }`}
                                         >
                                             <FiCheck size={10} strokeWidth={3} />
