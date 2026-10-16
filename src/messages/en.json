@@ -1,0 +1,49 @@
+{
+    "Header": {
+        "courses": "Learning paths",
+        "about": "About",
+        "howItWorks": "How it works",
+        "gamification": "Gamification",
+        "plans": "Pricing",
+        "login": "Log in",
+        "startFree": "Get started for free"
+    },
+     "Hero": {
+        "badge": "New learning path",
+        "titleStart": "Learn to code",
+        "titleHighlight": "every day",
+        "titleEnd": "with bite-sized lessons.",
+        "description": "Learn programming from scratch with quick challenges, hands-on activities, XP, leaderboards and daily progress. All at your own pace, in a simple and fun way.",
+        "startFree": "Get started for free",
+        "howItWorks": "How it works",
+        "benefit1": "Start for free",
+        "benefit2": "Learn at your own pace",
+        "benefit3": "Improve every day",
+        "streakDays": "12 days",
+        "streakLabel": "learning streak",
+        "mascotAlt": "Kapy, the Codly mascot"
+    },
+    "Method": {
+    "subtitle": "The Codly method",
+    "title": "Designed to fit your daily routine",
+    "description": "Bite-sized lessons, hands-on exercises, and visible progress — no need for lengthy courses to start learning how to code.",
+    "cards": {
+        "shortLessons": {
+            "title": "5-minute lessons",
+            "description": "Quick explanations, practical examples, and guided exercises in every lesson."
+        },
+        "dailyProgress": {
+            "title": "XP and daily streaks",
+            "description": "Earn XP with every lesson and keep your learning streak going."
+        },
+        "freeStart": {
+            "title": "No credit card required",
+            "description": "Explore the content and start learning before choosing a plan."
+        },
+        "platforms": {
+            "title": "Web, Android & iOS",
+            "description": "Learn in your browser or keep making progress on your phone."
+        }
+    }
+}
+}

@@ -1,0 +1,50 @@
+{
+    "Header": {
+        "courses": "Rutas de aprendizaje",
+        "about": "Acerca de",
+        "howItWorks": "Cómo funciona",
+        "gamification": "Gamificación",
+        "plans": "Planes",
+        "login": "Iniciar sesión",
+        "startFree": "Comenzar gratis"
+    },
+     "Hero": {
+        "badge": "Nueva ruta de aprendizaje",
+        "titleStart": "Aprende a programar",
+        "titleHighlight": "cada día",
+        "titleEnd": "con lecciones cortas.",
+        "description": "Aprende programación desde cero con desafíos rápidos, actividades prácticas, XP, clasificaciones y progreso diario. Todo de forma sencilla, divertida y a tu ritmo.",
+        "startFree": "Comenzar gratis",
+        "howItWorks": "Cómo funciona",
+        "benefit1": "Empieza gratis",
+        "benefit2": "Aprende a tu ritmo",
+        "benefit3": "Mejora todos los días",
+        "streakDays": "12 días",
+        "streakLabel": "de racha",
+        "mascotAlt": "Kapy, la mascota de Codly"
+    },
+
+"Method": {
+    "subtitle": "El método Codly",
+    "title": "Diseñado para adaptarse a tu rutina",
+    "description": "Lecciones cortas, ejercicios prácticos y progreso visible, sin necesidad de cursos largos para empezar a programar de verdad.",
+    "cards": {
+        "shortLessons": {
+            "title": "Lecciones de 5 minutos",
+            "description": "Explicaciones rápidas, ejemplos prácticos y ejercicios guiados en cada lección."
+        },
+        "dailyProgress": {
+            "title": "XP y rachas diarias",
+            "description": "Gana XP con cada lección y mantén activa tu racha de aprendizaje."
+        },
+        "freeStart": {
+            "title": "Empieza sin tarjeta",
+            "description": "Explora el contenido y empieza a aprender antes de elegir un plan."
+        },
+        "platforms": {
+            "title": "Web, Android e iOS",
+            "description": "Aprende desde tu navegador o continúa progresando en tu teléfono."
+        }
+    }
+}
+}

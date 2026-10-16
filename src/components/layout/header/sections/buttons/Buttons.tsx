@@ -1,15 +1,18 @@
+
 "use client";
 
 import Link from "next/link";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { useTheme } from "@/hooks/useTheme";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 export default function Buttons() {
     const { isDark, toggleTheme } = useTheme();
 
-
     return (
         <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+
             <button type="button" onClick={toggleTheme} aria-label={isDark ? "Ativar tema claro" : "Ativar tema escuro"} className="flex size-10 cursor-pointer items-center justify-center rounded-full border border-border bg-surface text-foreground transition-all duration-300 hover:border-primary/30 hover:bg-lavender hover:text-primary">
                 {isDark ? <FiSun size={17} /> : <FiMoon size={17} />}
             </button>
