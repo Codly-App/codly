@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import Container from "@/ui/Container";
+import SectionInfo from "@/ui/SectionInfo";
 
 export default function Hero() {
     const t = useTranslations("Hero");
@@ -37,14 +39,12 @@ export default function Hero() {
 
             <motion.div aria-hidden="true" animate={reduceMotion ? undefined : { x: [0, 60, 0], y: [0, -35, 0] }} transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }} className="pointer-events-none absolute -left-40 top-1/4 size-125 rounded-full bg-primary/5 blur-[110px]" />
 
-            <motion.div aria-hidden="true" animate={reduceMotion ? undefined : { x: [0, -50, 0], y: [0, 40, 0] }} transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }} className="pointer-events-none absolute -right-40 bottom-0 size-125 rounded-full bg-violet-300/15 blur-[110px]" />
+            <motion.div aria-hidden="true" animate={reduceMotion ? undefined : { x: [0, -50, 0], y: [0, 40, 0] }} transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }} className="pointer-events-none absolute -right-40 bottom-1/4 size-125 rounded-full bg-violet-300/15 blur-[110px] dark:bg-primary/10" />
 
-            <div className="relative z-10 mx-auto grid min-h-[calc(100vh-5rem)] w-full max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:px-8 lg:py-16">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-40 bg-linear-to-t from-background to-transparent dark:block" />
+            <Container className="relative z-10 grid min-h-[calc(100vh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-16">
                 <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.13 }} className="flex min-w-0 max-w-xl flex-col items-start">
-                    <motion.div variants={fadeUp} className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-lavender px-3 py-1.5 text-xs font-semibold text-primary">
-                        <AiOutlineThunderbolt size={15} />
-                        <span>{t("badge")}</span>
-                    </motion.div>
+                    <SectionInfo icon={<AiOutlineThunderbolt size={15} />} subTitle={t("badge")} />
 
                     <motion.h1 variants={fadeUp} className="max-w-xl text-[42px] font-extrabold leading-[1.06] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-[4.2rem]">
                         {t("titleStart")} <span className="text-primary">{t("titleHighlight")}</span>, {t("titleEnd")}
@@ -90,7 +90,7 @@ export default function Hero() {
                         </motion.div>
                     </div>
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

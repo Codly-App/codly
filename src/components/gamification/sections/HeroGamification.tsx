@@ -23,6 +23,7 @@ export default function HeroGamification() {
     return (
         <section className="relative w-full overflow-hidden bg-background">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(124,58,237,0.08),transparent_50%),radial-gradient(ellipse_at_85%_75%,rgba(167,139,250,0.1),transparent_45%)]" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-40 bg-linear-to-t from-background to-transparent dark:block" />
 
             <Container className="relative grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
                 <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }} className="max-w-2xl">
