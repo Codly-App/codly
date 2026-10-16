@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Logo from "@/components/layout/header/sections/logo/Logo";
 import Container from "@/ui/Container";
+import CurrentYear from "./CurrentYear";
 
 type FooterLink = {
     id: number;
@@ -45,9 +46,8 @@ const footerGroups: FooterGroup[] = [
     },
 ];
 
-export default async function Footer() {
-    "use cache";
-    const currentYear = new Date().getFullYear();
+export default function Footer() {
+
 
     return (
         <footer className="w-full border-t border-border bg-background">
@@ -86,7 +86,7 @@ export default async function Footer() {
 
                 <div className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-xs leading-5 text-muted">
-                        © {currentYear} Codly Tecnologia Educacional LTDA. Todos os direitos reservados.
+                        © <CurrentYear/> Codly Tecnologia Educacional LTDA. Todos os direitos reservados.
                     </p>
 
                     <p className="text-xs text-muted">

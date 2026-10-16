@@ -20,7 +20,7 @@ type Plan = {
     popular?: boolean;
 };
 
-const plans: Plan[] = [
+export const plans: Plan[] = [
     {
         name: "Demo",
         tagline: "Experimente sem compromisso",
@@ -57,7 +57,7 @@ const plans: Plan[] = [
 export default function Plans() {
     const [selected, setSelected] = useState(1);
     const plan = plans[selected];
-        const zones = [
+    const zones = [
         { label: "Iniciante", desc: "Lições 1 a 6", color: "#22C55E" },
         { label: "Intermediário", desc: "Lições 7 a 12", color: "#F59E0B" },
         { label: "Avançado · Pro", desc: "Lições 13 a 18", color: "#7C3AED" },
@@ -82,6 +82,7 @@ export default function Plans() {
     const lastIndex = plan.unlocks * PER_ZONE - 1;
     const progress = lastIndex / (TOTAL - 1);
     const flagLeft = `${(points[lastIndex].x / W) * 100}%`;
+    const flagColor = zones[plan.unlocks - 1].color;
 
     return (
         <section id="planos" className="relative w-full overflow-hidden section-fade-alt">
@@ -99,7 +100,6 @@ export default function Plans() {
                     </p>
                 </motion.div>
 
-                {/* seletor */}
                 <div className="mx-auto flex max-w-xl rounded-full border border-border bg-surface p-1">
                     {plans.map((p, i) => (
                         <button
@@ -132,14 +132,17 @@ export default function Plans() {
                 <div className="mt-10 hidden overflow-x-auto pb-2 md:block">
                     <div className="relative mx-auto min-w-180 max-w-5xl pt-14">
                         <motion.div
-                            animate={{ left: flagLeft }}
+                            animate={{ left: flagLeft, backgroundColor: flagColor }}
                             transition={{ type: "spring", stiffness: 160, damping: 20 }}
                             style={{ x: "-50%" }}
-                            className="absolute top-0 flex items-center gap-1.5 whitespace-nowrap rounded-full bg-foreground px-3 py-1.5 text-[11px] font-bold text-background"
+                            className="absolute top-0 flex items-center gap-1.5 whitespace-nowrap rounded-full bg-primary px-3 py-1.5 text-[11px] font-bold text-white text-shadow-md"
                         >
                             <FiFlag size={11} />
                             {plan.checkpoint}
-                            <span className="absolute -bottom-1 left-1/2 size-2 -translate-x-1/2 rotate-45 bg-foreground" />
+                            <span
+                                className="absolute -bottom-1 left-1/2 size-2 -translate-x-1/2 rotate-45 bg-primary"
+                                style={{ backgroundColor: flagColor }}
+                            />
                         </motion.div>
 
                         <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="Mapa da trilha de lições">
