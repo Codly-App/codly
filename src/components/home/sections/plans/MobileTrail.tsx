@@ -2,8 +2,8 @@
 import { motion } from "motion/react";
 import { FiCheck, FiLock, FiFlag } from "react-icons/fi";
 
-export default function MobileTrail({ unlocks, checkpoint }: Readonly<{ unlocks: number, checkpoint: string }>) {
-    
+
+export default function MobileTrail({ unlocks, checkpoint }: { unlocks: number; checkpoint: string }) {
     const zones = [
         { label: "Iniciante", desc: "Lições 1 a 6", color: "#22C55E" },
         { label: "Intermediário", desc: "Lições 7 a 12", color: "#F59E0B" },
@@ -12,14 +12,14 @@ export default function MobileTrail({ unlocks, checkpoint }: Readonly<{ unlocks:
     const STEP = 0.4;
     const PER_ZONE = 6;
     const fillPct = ((unlocks - 1) / (zones.length - 1)) * 100;
-    const flagColor = zones[unlocks - 1].color;
 
     return (
         <div className="relative mx-auto max-w-sm rounded-3xl border border-border bg-surface p-5">
-            <div className="absolute bottom-10 left-9.5 top-10 w-1 rounded-full bg-border">
+            {/* trilha de fundo + preenchimento */}
+            <div className="absolute bottom-[calc(1.25rem+20px)] left-[calc(1.25rem+18px)] top-[calc(1.25rem+20px)] w-1 rounded-full bg-border">
                 <motion.div
                     className="w-full rounded-full bg-primary"
-                    animate={{ height: `${fillPct}%`, backgroundColor: flagColor}}
+                    animate={{ height: `${fillPct}%` }}
                     transition={{ duration: STEP * (zones.length - 1) + 0.2, ease: "easeInOut" }}
                 />
             </div>
@@ -53,7 +53,6 @@ export default function MobileTrail({ unlocks, checkpoint }: Readonly<{ unlocks:
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: i * STEP + 0.3, duration: 0.3 }}
                                         className="inline-flex items-center gap-1 rounded-full bg-foreground px-2.5 py-1 text-[10px] font-bold text-background"
-                                        style={{ backgroundColor: flagColor }}
                                     >
                                         <FiFlag size={10} />
                                         {checkpoint}
