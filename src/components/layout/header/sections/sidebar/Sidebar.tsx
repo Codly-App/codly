@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -69,8 +68,7 @@ export default function Sidebar() {
                             transition={{ duration: reduceMotion ? 0 : 0.25 }}
                             onClick={closeMenu}
                             aria-hidden="true"
-                            className="fixed inset-0 z-60 bg-[#0f0b1a]/60 backdrop-blur-sm lg:hidden"
-                        />
+                            className="fixed inset-0 z-60 bg-[#0f0b1a]/60 backdrop-blur-sm lg:hidden" />
 
                         <motion.aside
                             id="codly-mobile-menu"
@@ -81,16 +79,13 @@ export default function Sidebar() {
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: reduceMotion ? 0 : "100%", opacity: reduceMotion ? 0 : 1 }}
                             transition={{ duration: reduceMotion ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            className="fixed inset-y-0 right-0 z-70 flex h-dvh w-[min(88vw,380px)] flex-col border-l border-border bg-background shadow-[-20px_0_60px_rgba(15,11,26,0.18)] lg:hidden"
-                        >
+                            className="fixed inset-y-0 right-0 z-70 flex h-dvh w-[min(88vw,380px)] flex-col border-l border-border bg-background shadow-[-20px_0_60px_rgba(15,11,26,0.18)] lg:hidden">
                             <div className="flex h-20 shrink-0 items-center justify-between border-b border-border px-6">
                                 <Link href="/" onClick={closeMenu} className="flex items-center gap-2.5">
-                                    <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-sm font-extrabold text-white shadow-[0_5px_15px_rgba(124,58,237,0.25)]">
+                                    <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-sm font-extrabold text-white shadow-[0_5px_15px_rgba(124,58,237,0.25">
                                         C
                                     </span>
-                                    <span className="text-lg font-extrabold tracking-tight text-foreground">
-                                        Codly
-                                    </span>
+                                    <span className="text-lg font-extrabold tracking-tight text-foreground">Codly</span>
                                 </Link>
 
                                 <button type="button" onClick={closeMenu} aria-label="Fechar menu" className="flex size-9 cursor-pointer items-center justify-center rounded-xl border border-border bg-surface text-muted transition-colors hover:bg-lavender hover:text-primary">
@@ -99,9 +94,7 @@ export default function Sidebar() {
                             </div>
 
                             <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-6 py-7">
-                                <span className="mb-4 text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
-                                    Explore a Codly
-                                </span>
+                                <span className="mb-4 text-[11px] font-bold uppercase tracking-[0.16em] text-primary">Explore a Codly</span>
 
                                 <nav aria-label="Navegação mobile">
                                     <ul className="flex flex-col gap-1.5">
@@ -132,19 +125,17 @@ export default function Sidebar() {
 
                             <div className="shrink-0 border-t border-border bg-background px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
                                 <div className="flex flex-col gap-3">
-                                    <button type="button" onClick={openLaunchModal} className="group flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(124,58,237,0.22)] transition-colors hover:bg-primary-dark">
+                                    <Link href='/Plans' className="group flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(124,58,237,0.22)] transition-colors hover:bg-primary-dark">
                                         Começar grátis
                                         <FiArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                                    </button>
+                                    </Link>
 
                                     <button type="button" onClick={openLaunchModal} className="flex h-12 w-full cursor-pointer items-center justify-center rounded-xl border border-border bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:bg-lavender hover:text-primary">
                                         Entrar na minha conta
                                     </button>
                                 </div>
 
-                                <p className="mt-5 text-center text-[11px] text-muted">
-                                    Aprenda. Pratique. Evolua. 💜
-                                </p>
+                                <p className="mt-5 text-center text-[11px] text-muted">Aprenda. Pratique. Evolua. 💜</p>
                             </div>
                         </motion.aside>
                     </>
