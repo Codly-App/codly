@@ -24,7 +24,7 @@ export default function Buttons() {
                     Entrar
                 </button>
 
-                <Link href="/cadastro" className="inline-flex h-10 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(124,58,237,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_8px_24px_rgba(124,58,237,0.3)]">
+                <Link href="/Plans" className="inline-flex h-10 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(124,58,237,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_8px_24px_rgba(124,58,237,0.3)]">
                     Começar grátis
                 </Link>
             </div>
