@@ -1,52 +1,61 @@
 
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Logo from "@/components/layout/header/sections/logo/Logo";
 import Container from "@/ui/Container";
 
+type FooterKey =
+    | "courses"
+    | "plans"
+    | "gamification"
+    | "about"
+    | "contact"
+    | "privacy"
+    | "webPwa"
+    | "android"
+    | "ios";
+type FooterGroupKey = "product" | "company" | "platforms";
+
 type FooterLink = {
     id: number;
-    name: string;
+    key: FooterKey;
     href: string;
 };
 
 type FooterGroup = {
-    id: string;
-    title: string;
+    id: FooterGroupKey;
     links: FooterLink[];
 };
 
 const footerGroups: FooterGroup[] = [
     {
-        id: "produto",
-        title: "Produto",
+        id: "product",
         links: [
-            { id: 1, name: "Cursos", href: "/#cursos" },
-            { id: 2, name: "Planos", href: "/#planos" },
-            { id: 3, name: "Gamificação", href: "/gamification" },
+            { id: 1, key: "courses", href: "/#cursos" },
+            { id: 2, key: "plans", href: "/Plans" },
+            { id: 3, key: "gamification", href: "/gamification" },
         ],
     },
     {
-        id: "empresa",
-        title: "Empresa",
+        id: "company",
         links: [
-            { id: 4, name: "Sobre", href: "/" },
-            { id: 5, name: "Contato", href: "/contact" },
-            { id: 6, name: "Termos e privacidade", href: "/privacysecurity" },
+            { id: 4, key: "about", href: "/#sobre" },
+            { id: 5, key: "contact", href: "/contact" },
+            { id: 6, key: "privacy", href: "/privacysecurity" },
         ],
     },
     {
-        id: "plataformas",
-        title: "Plataformas",
+        id: "platforms",
         links: [
-            { id: 7, name: "Web & PWA", href: "/#instalar-app" },
-            { id: 8, name: "Android", href: "/#android" },
-            { id: 9, name: "iOS", href: "/#ios" },
+            { id: 7, key: "webPwa", href: "/#instalar-app" },
+            { id: 8, key: "android", href: "/#android" },
+            { id: 9, key: "ios", href: "/#ios" },
         ],
     },
 ];
 
 export default async function Footer() {
-    "use cache";
+    const t = await getTranslations("Footer");
     const currentYear = new Date().getFullYear();
 
     return (
@@ -57,25 +66,25 @@ export default async function Footer() {
                         <Logo />
 
                         <p className="mt-4 text-sm font-medium text-muted">
-                            Codly Tecnologia Educacional LTDA.
+                            {t("companyName")}
                         </p>
 
                         <p className="mt-1 max-w-65 text-sm leading-6 text-muted">
-                            Plataforma gamificada para aprender programação em lições curtas.
+                            {t("description")}
                         </p>
                     </div>
 
                     {footerGroups.map((group) => (
-                        <nav key={group.id} aria-label={group.title} className="flex flex-col items-start">
+                        <nav key={group.id} aria-label={t(group.id)} className="flex flex-col items-start">
                             <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.08em] text-foreground">
-                                {group.title}
+                                {t(group.id)}
                             </h3>
 
                             <ul className="flex flex-col gap-3">
                                 {group.links.map((item) => (
                                     <li key={item.id}>
                                         <Link href={item.href} className="inline-flex text-sm text-muted transition-colors duration-300 hover:text-primary">
-                                            {item.name}
+                                            {t(item.key)}
                                         </Link>
                                     </li>
                                 ))}
@@ -86,11 +95,10 @@ export default async function Footer() {
 
                 <div className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-xs leading-5 text-muted">
-                        © {currentYear} Codly Tecnologia Educacional LTDA. Todos os direitos reservados.
+                        © {currentYear} {t("companyName")} {t("rights")}
                     </p>
-
                     <p className="text-xs text-muted">
-                        Feito com carinho e capivaras.
+                        {t("madeWithLove")}
                     </p>
                 </div>
             </Container>

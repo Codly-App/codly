@@ -1,14 +1,24 @@
 {
     "Header": {
-        "courses": "Learning paths",
-        "about": "About",
-        "howItWorks": "How it works",
-        "gamification": "Gamification",
-        "plans": "Pricing",
         "login": "Log in",
-        "startFree": "Get started for free"
+        "startFree": "Get started for free",
+        "navigation": {
+            "courses": "Courses",
+            "about": "About",
+            "howItWorks": "How it works",
+            "gamification": "Gamification",
+            "plans": "Plans",
+            "ariaLabel": "Main navigation"
+        }
     },
-     "Hero": {
+    "Buttons": {
+        "login": "Log in",
+        "startFree": "Get started for free",
+        "lightTheme": "Switch to light mode",
+        "darkTheme": "Switch to dark mode"
+    },
+
+    "Hero": {
         "badge": "New learning path",
         "titleStart": "Learn to code",
         "titleHighlight": "every day",
@@ -24,26 +34,53 @@
         "mascotAlt": "Kapy, the Codly mascot"
     },
     "Method": {
-    "subtitle": "The Codly method",
-    "title": "Designed to fit your daily routine",
-    "description": "Bite-sized lessons, hands-on exercises, and visible progress — no need for lengthy courses to start learning how to code.",
-    "cards": {
-        "shortLessons": {
-            "title": "5-minute lessons",
-            "description": "Quick explanations, practical examples, and guided exercises in every lesson."
-        },
-        "dailyProgress": {
-            "title": "XP and daily streaks",
-            "description": "Earn XP with every lesson and keep your learning streak going."
-        },
-        "freeStart": {
-            "title": "No credit card required",
-            "description": "Explore the content and start learning before choosing a plan."
-        },
-        "platforms": {
-            "title": "Web, Android & iOS",
-            "description": "Learn in your browser or keep making progress on your phone."
+        "subtitle": "The Codly method",
+        "title": "Designed to fit your daily routine",
+        "description": "Bite-sized lessons, hands-on exercises, and visible progress — no need for lengthy courses to start learning how to code.",
+        "cards": {
+            "shortLessons": {
+                "title": "5-minute lessons",
+                "description": "Quick explanations, practical examples, and guided exercises in every lesson."
+            },
+            "dailyProgress": {
+                "title": "XP and daily streaks",
+                "description": "Earn XP with every lesson and keep your learning streak going."
+            },
+            "freeStart": {
+                "title": "No credit card required",
+                "description": "Explore the content and start learning before choosing a plan."
+            },
+            "platforms": {
+                "title": "Web, Android & iOS",
+                "description": "Learn in your browser or keep making progress on your phone."
+            }
         }
+    },
+
+    "Footer": {
+        "companyName": "Codly Tecnologia Educacional LTDA.",
+        "description": "A gamified platform for learning programming through bite-sized lessons.",
+        "product": "Product",
+        "company": "Company",
+        "platforms": "Platforms",
+        "courses": "Courses",
+        "plans": "Plans",
+        "gamification": "Gamification",
+        "about": "About",
+        "contact": "Contact",
+        "privacy": "Terms and privacy",
+        "webPwa": "Web & PWA",
+        "android": "Android",
+        "ios": "iOS",
+        "rights": "All rights reserved.",
+        "madeWithLove": "Made with love and capybaras."
+    },
+
+    "KapyCTA": {
+        "title": "Meet Kapy and start learning to code today!",
+        "description": "Your mascot will be there for every lesson, every learning streak, and every achievement. Create your free account and complete your first lesson in just a few minutes.",
+        "createAccount": "Create a free account",
+        "installApp": "Install the app (PWA)",
+        "mascotAlt": "Kapy, the Codly mascot"
     }
-}
 }

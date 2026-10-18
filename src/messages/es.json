@@ -1,14 +1,24 @@
 {
     "Header": {
-        "courses": "Rutas de aprendizaje",
-        "about": "Acerca de",
-        "howItWorks": "Cómo funciona",
-        "gamification": "Gamificación",
-        "plans": "Planes",
         "login": "Iniciar sesión",
-        "startFree": "Comenzar gratis"
+        "startFree": "Comenzar gratis",
+        "navigation": {
+            "courses": "Cursos",
+            "about": "Acerca de",
+            "howItWorks": "Cómo funciona",
+            "gamification": "Gamificación",
+            "plans": "Planes",
+            "ariaLabel": "Navegación principal"
+        }
     },
-     "Hero": {
+
+    "Buttons": {
+        "login": "Iniciar sesión",
+        "startFree": "Comenzar gratis",
+        "lightTheme": "Activar modo claro",
+        "darkTheme": "Activar modo oscuro"
+    },
+    "Hero": {
         "badge": "Nueva ruta de aprendizaje",
         "titleStart": "Aprende a programar",
         "titleHighlight": "cada día",
@@ -24,27 +34,54 @@
         "mascotAlt": "Kapy, la mascota de Codly"
     },
 
-"Method": {
-    "subtitle": "El método Codly",
-    "title": "Diseñado para adaptarse a tu rutina",
-    "description": "Lecciones cortas, ejercicios prácticos y progreso visible, sin necesidad de cursos largos para empezar a programar de verdad.",
-    "cards": {
-        "shortLessons": {
-            "title": "Lecciones de 5 minutos",
-            "description": "Explicaciones rápidas, ejemplos prácticos y ejercicios guiados en cada lección."
-        },
-        "dailyProgress": {
-            "title": "XP y rachas diarias",
-            "description": "Gana XP con cada lección y mantén activa tu racha de aprendizaje."
-        },
-        "freeStart": {
-            "title": "Empieza sin tarjeta",
-            "description": "Explora el contenido y empieza a aprender antes de elegir un plan."
-        },
-        "platforms": {
-            "title": "Web, Android e iOS",
-            "description": "Aprende desde tu navegador o continúa progresando en tu teléfono."
+    "Method": {
+        "subtitle": "El método Codly",
+        "title": "Diseñado para adaptarse a tu rutina",
+        "description": "Lecciones cortas, ejercicios prácticos y progreso visible, sin necesidad de cursos largos para empezar a programar de verdad.",
+        "cards": {
+            "shortLessons": {
+                "title": "Lecciones de 5 minutos",
+                "description": "Explicaciones rápidas, ejemplos prácticos y ejercicios guiados en cada lección."
+            },
+            "dailyProgress": {
+                "title": "XP y rachas diarias",
+                "description": "Gana XP con cada lección y mantén activa tu racha de aprendizaje."
+            },
+            "freeStart": {
+                "title": "Empieza sin tarjeta",
+                "description": "Explora el contenido y empieza a aprender antes de elegir un plan."
+            },
+            "platforms": {
+                "title": "Web, Android e iOS",
+                "description": "Aprende desde tu navegador o continúa progresando en tu teléfono."
+            }
         }
+    },
+
+    "Footer": {
+        "companyName": "Codly Tecnologia Educacional LTDA.",
+        "description": "Una plataforma gamificada para aprender programación con lecciones cortas.",
+        "product": "Producto",
+        "company": "Empresa",
+        "platforms": "Plataformas",
+        "courses": "Cursos",
+        "plans": "Planes",
+        "gamification": "Gamificación",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "privacy": "Términos y privacidad",
+        "webPwa": "Web y PWA",
+        "android": "Android",
+        "ios": "iOS",
+        "rights": "Todos los derechos reservados.",
+        "madeWithLove": "Hecho con cariño y capibaras."
+    },
+
+    "KapyCTA": {
+        "title": "¡Conoce a Kapy y empieza a programar hoy!",
+        "description": "Tu mascota te acompañará en cada lección, cada racha de estudio y cada logro. Crea tu cuenta gratis y completa tu primera lección en pocos minutos.",
+        "createAccount": "Crear cuenta gratis",
+        "installApp": "Instalar la aplicación (PWA)",
+        "mascotAlt": "Kapy, la mascota de Codly"
     }
-}
 }
