@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -5,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { FiMenu, FiX, FiArrowRight, FiMoon, FiSun } from "react-icons/fi";
 import { useTheme } from "@/hooks/useTheme";
+import LaunchModal from "../launchModal/LaunchModal";
 
 type NavItem = {
     id: number;
@@ -21,6 +23,8 @@ const navLinks: NavItem[] = [
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isLaunchOpen, setIsLaunchOpen] = useState(false);
+
     const { isDark, toggleTheme } = useTheme();
     const reduceMotion = useReducedMotion();
 
@@ -44,6 +48,10 @@ export default function Sidebar() {
 
     const closeMenu = () => setIsOpen(false);
 
+    const openLaunchModal = () => {
+        setIsOpen(false);
+        setIsLaunchOpen(true);
+    };
 
     return (
         <>
@@ -124,15 +132,16 @@ export default function Sidebar() {
 
                             <div className="shrink-0 border-t border-border bg-background px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
                                 <div className="flex flex-col gap-3">
-                                    <Link href="/cadastro" onClick={closeMenu} className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(124,58,237,0.22)] transition-colors hover:bg-primary-dark">
+                                    <button type="button" onClick={openLaunchModal} className="group flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(124,58,237,0.22)] transition-colors hover:bg-primary-dark">
                                         Começar grátis
                                         <FiArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                                    </Link>
+                                    </button>
 
-                                    <Link href="/login" onClick={closeMenu} className="flex h-12 items-center justify-center rounded-xl border border-border bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:bg-lavender hover:text-primary">
+                                    <button type="button" onClick={openLaunchModal} className="flex h-12 w-full cursor-pointer items-center justify-center rounded-xl border border-border bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:bg-lavender hover:text-primary">
                                         Entrar na minha conta
-                                    </Link>
+                                    </button>
                                 </div>
+
                                 <p className="mt-5 text-center text-[11px] text-muted">
                                     Aprenda. Pratique. Evolua. 💜
                                 </p>
@@ -141,6 +150,8 @@ export default function Sidebar() {
                     </>
                 )}
             </AnimatePresence>
+
+            <LaunchModal isOpen={isLaunchOpen} onClose={() => setIsLaunchOpen(false)} />
         </>
     );
 }

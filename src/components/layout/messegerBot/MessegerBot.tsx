@@ -82,7 +82,7 @@ export default function MessegerBot() {
     if (!mounted) return null;
 
     return createPortal(
-        <div className="pointer-events-none fixed inset-0 z-9999">
+        <div className="pointer-events-none fixed inset-0 z-9995">
             <AnimatePresence>
                 {isOpen && (
                     <motion.section
