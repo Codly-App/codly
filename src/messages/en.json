@@ -17,7 +17,6 @@
         "lightTheme": "Switch to light mode",
         "darkTheme": "Switch to dark mode"
     },
-
     "Hero": {
         "badge": "New learning path",
         "titleStart": "Learn to code",
@@ -56,7 +55,6 @@
             }
         }
     },
-
     "Footer": {
         "companyName": "Codly Tecnologia Educacional LTDA.",
         "description": "A gamified platform for learning programming through bite-sized lessons.",
@@ -75,12 +73,62 @@
         "rights": "All rights reserved.",
         "madeWithLove": "Made with love and capybaras."
     },
-
     "KapyCTA": {
         "title": "Meet Kapy and start learning to code today!",
         "description": "Your mascot will be there for every lesson, every learning streak, and every achievement. Create your free account and complete your first lesson in just a few minutes.",
         "createAccount": "Create a free account",
         "installApp": "Install the app (PWA)",
         "mascotAlt": "Kapy, the Codly mascot"
+    },
+    "PlanComparison": {
+        "subtitle": "Codly Plans",
+        "title": "One journey, two ways to grow",
+        "description": "Start learning for free at your own pace. When you're ready to explore even more possibilities, Codly Pro will be there for you.",
+        "free": {
+            "name": "Codly Free",
+            "price": "Free",
+            "description": "Everything you need to start your coding journey.",
+            "features": {
+                "languages": "Up to 10 languages at once",
+                "ranking": "XP leaderboard",
+                "profile": "Customizable profile",
+                "groups": "Challenge group with friends"
+            },
+            "button": "Get started for free"
+        },
+        "pro": {
+            "name": "Codly Pro",
+            "price": "Coming soon",
+            "description": "More freedom to keep growing.",
+            "features": {
+                "allFree": "All Free plan benefits",
+                "languages": "Unlimited programming languages",
+                "ai": "AI-powered assistant",
+                "chat": "Group conversations",
+                "groups": "Multiple challenge groups"
+            },
+            "button": "Explore the launch"
+        },
+        "launchNote": "Features planned for the launch of the Codly platform."
+    },
+    "Trails": {
+        "subtitle": "Launch learning paths",
+        "title": "SQL, JavaScript, and much more — from beginner to advanced",
+        "description": "Switch between levels and explore the kind of code you'll write at each stage of your learning path.",
+        "levels": {
+            "beginner": "Beginner",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced · Pro"
+        },
+        "courses": {
+            "sql": {
+                "subtitle": "Hands-on database skills",
+                "button": "Start the SQL learning path"
+            },
+            "javascript": {
+                "subtitle": "Programming logic for the web",
+                "button": "Start the JavaScript learning path"
+            }
+        }
     }
 }

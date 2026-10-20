@@ -11,7 +11,6 @@
             "ariaLabel": "Navegación principal"
         }
     },
-
     "Buttons": {
         "login": "Iniciar sesión",
         "startFree": "Comenzar gratis",
@@ -33,7 +32,6 @@
         "streakLabel": "de racha",
         "mascotAlt": "Kapy, la mascota de Codly"
     },
-
     "Method": {
         "subtitle": "El método Codly",
         "title": "Diseñado para adaptarse a tu rutina",
@@ -57,7 +55,6 @@
             }
         }
     },
-
     "Footer": {
         "companyName": "Codly Tecnologia Educacional LTDA.",
         "description": "Una plataforma gamificada para aprender programación con lecciones cortas.",
@@ -76,12 +73,62 @@
         "rights": "Todos los derechos reservados.",
         "madeWithLove": "Hecho con cariño y capibaras."
     },
-
     "KapyCTA": {
         "title": "¡Conoce a Kapy y empieza a programar hoy!",
         "description": "Tu mascota te acompañará en cada lección, cada racha de estudio y cada logro. Crea tu cuenta gratis y completa tu primera lección en pocos minutos.",
         "createAccount": "Crear cuenta gratis",
         "installApp": "Instalar la aplicación (PWA)",
         "mascotAlt": "Kapy, la mascota de Codly"
+    },
+    "PlanComparison": {
+        "subtitle": "Planes Codly",
+        "title": "Un camino, dos formas de crecer",
+        "description": "Empieza a aprender gratis y a tu ritmo. Cuando quieras explorar más posibilidades, Codly Pro estará a tu lado.",
+        "free": {
+            "name": "Codly Free",
+            "price": "Gratis",
+            "description": "Todo lo que necesitas para comenzar tu camino en la programación.",
+            "features": {
+                "languages": "Hasta 10 lenguajes a la vez",
+                "ranking": "Clasificación de XP",
+                "profile": "Perfil personalizable",
+                "groups": "Grupo de desafíos con amigos"
+            },
+            "button": "Quiero empezar gratis"
+        },
+        "pro": {
+            "name": "Codly Pro",
+            "price": "Próximamente",
+            "description": "Más libertad para seguir creciendo.",
+            "features": {
+                "allFree": "Todos los beneficios del plan gratuito",
+                "languages": "Lenguajes de programación ilimitados",
+                "ai": "Asistente con IA",
+                "chat": "Conversaciones en grupo",
+                "groups": "Múltiples grupos de desafíos"
+            },
+            "button": "Conocer el lanzamiento"
+        },
+        "launchNote": "Funciones previstas para el lanzamiento de la plataforma Codly."
+    },
+    "Trails": {
+        "subtitle": "Rutas de aprendizaje de lanzamiento",
+        "title": "SQL, JavaScript y mucho más, desde cero hasta avanzado",
+        "description": "Cambia de nivel y descubre el tipo de código que escribirás en cada etapa de tu ruta de aprendizaje.",
+        "levels": {
+            "beginner": "Principiante",
+            "intermediate": "Intermedio",
+            "advanced": "Avanzado · Pro"
+        },
+        "courses": {
+            "sql": {
+                "subtitle": "Bases de datos en la práctica",
+                "button": "Comenzar la ruta de SQL"
+            },
+            "javascript": {
+                "subtitle": "Lógica de programación para la web",
+                "button": "Comenzar la ruta de JavaScript"
+            }
+        }
     }
 }

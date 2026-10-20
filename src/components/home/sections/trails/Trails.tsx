@@ -1,22 +1,141 @@
+
 "use client";
 
 import { Fragment, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { FaDatabase, FaArrowRight, FaRoute } from "react-icons/fa6";
 import { SiJavascript } from "react-icons/si";
 import Container from "@/ui/Container";
 import SectionInfo from "@/ui/SectionInfo";
 
+type CourseKey = "sql" | "javascript";
+type LevelKey = "beginner" | "intermediate" | "advanced";
+
+type Level = {
+    id: LevelKey;
+    filename: string;
+    code: string;
+};
+
+type Course = {
+    id: CourseKey;
+    icon: React.ReactNode;
+    title: string;
+    levels: Level[];
+};
+
+const sqlLevels: Level[] = [
+    {
+        id: "beginner",
+        filename: "consulta.sql",
+        code: `SELECT nome, email
+FROM usuarios
+WHERE ativo = true
+ORDER BY criado_em DESC
+LIMIT 10;`,
+    },
+    {
+        id: "intermediate",
+        filename: "relatorio.sql",
+        code: `SELECT u.nome, COUNT(p.id) AS pedidos
+FROM usuarios u
+INNER JOIN pedidos p ON p.usuario_id = u.id
+GROUP BY u.nome
+HAVING COUNT(p.id) > 3;`,
+    },
+    {
+        id: "advanced",
+        filename: "ranking.sql",
+        code: `SELECT nome, salario,
+  RANK() OVER (
+    PARTITION BY departamento
+    ORDER BY salario DESC
+  ) AS posicao
+FROM funcionarios;`,
+    },
+];
+
+const javascriptLevels: Level[] = [
+    {
+        id: "beginner",
+        filename: "greeting.js",
+        code: `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("Ana"));`,
+    },
+    {
+        id: "intermediate",
+        filename: "api.js",
+        code: `async function fetchUser(id) {
+  const res = await fetch(\`/api/users/\${id}\`);
+  if (!res.ok) throw new Error("Failed");
+  return res.json();
+}`,
+    },
+    {
+        id: "advanced",
+        filename: "counter.js",
+        code: `const withCounter = (fn) => {
+  let calls = 0;
+  return (...args) => {
+    calls++;
+    return fn(...args);
+  };
+};`,
+    },
+];
+
+const localizedCode = {
+    "pt-BR": {
+        greeting: "Olá",
+        error: "Falhou",
+    },
+    en: {
+        greeting: "Hello",
+        error: "Failed",
+    },
+    es: {
+        greeting: "Hola",
+        error: "Error",
+    },
+} as const;
+
+function getJavaScriptLevels(locale: string): Level[] {
+    const texts = localizedCode[locale as keyof typeof localizedCode] ?? localizedCode["pt-BR"];
+
+    return javascriptLevels.map((level) => {
+        if (level.id === "beginner") {
+            return {
+                ...level,
+                code: level.code.replace("Hello", texts.greeting),
+            };
+        }
+
+        if (level.id === "intermediate") {
+            return {
+                ...level,
+                code: level.code.replace('"Failed"', `"${texts.error}"`),
+            };
+        }
+
+        return level;
+    });
+}
+
 function HighlightedCode({ code }: { code: string }) {
     const keywords = [
-        "INNER JOIN", "LEFT JOIN", "PARTITION BY", "GROUP BY", "ORDER BY",
-        "SELECT", "FROM", "WHERE", "HAVING", "LIMIT", "OVER", "RANK",
-        "COUNT", "AS", "DESC", "ASC", "function", "async", "await",
-        "const", "let", "return", "throw", "new", "if", "fetch", "console",
+        "INNER JOIN", "LEFT JOIN", "PARTITION BY", "GROUP BY",
+        "ORDER BY", "SELECT", "FROM", "WHERE", "HAVING",
+        "LIMIT", "OVER", "RANK", "COUNT", "AS", "DESC",
+        "ASC", "function", "async", "await", "const",
+        "let", "return", "throw", "new", "if",
     ];
 
     const pattern = new RegExp(
-        `(\`[^\`]*\`|"[^"]*"|'[^']*'|\\/\\/.*$\vert{}\\b(?:${keywords.sort((a, b) => b.length - a.length).join("|")})\\b)`,
+        `(\`[^\`]*\`|"[^"]*"|'[^']*'|\\/\\/[^\\n]*|\\b(?:${keywords.join("|")})\\b)`,
         "gm"
     );
 
@@ -29,108 +148,19 @@ function HighlightedCode({ code }: { code: string }) {
                     return <Fragment key={index}>{part}</Fragment>;
                 }
 
-
                 if (/^[`"']/.test(part)) {
                     return <span key={index} className="text-[#8bd5a0]">{part}</span>;
                 }
-                
 
                 if (part.startsWith("//")) {
                     return <span key={index} className="text-[#6b6584]">{part}</span>;
                 }
-                
-                return <span key={index} className="text-[#c792ea] font-semibold">{part}</span>;
+
+                return <span key={index} className="font-semibold text-[#c792ea]">{part}</span>;
             })}
         </code>
     );
 }
-
-type Level = {
-    name: string;
-    filename: string;
-    code: string;
-};
-
-type Course = {
-    icon: React.ReactNode;
-    title: string;
-    subtitle: string;
-    levels: Level[];
-};
-
-const courses: Course[] = [
-    {
-        icon: <FaDatabase size={18} />,
-        title: "SQL",
-        subtitle: "Bancos de dados na prática",
-        levels: [
-            {
-                name: "Iniciante",
-                filename: "consulta.sql",
-                code: `SELECT nome, email
-FROM usuarios
-WHERE ativo = true
-ORDER BY criado_em DESC
-LIMIT 10;`,
-            },
-            {
-                name: "Intermediário",
-                filename: "relatorio.sql",
-                code: `SELECT u.nome, COUNT(p.id) AS pedidos
-FROM usuarios u
-INNER JOIN pedidos p ON p.usuario_id = u.id
-GROUP BY u.nome
-HAVING COUNT(p.id) > 3;`,
-            },
-            {
-                name: "Avançado · Pro",
-                filename: "ranking.sql",
-                code: `SELECT nome, salario,
-  RANK() OVER (
-    PARTITION BY departamento
-    ORDER BY salario DESC
-  ) AS posicao
-FROM funcionarios;`,
-            },
-        ],
-    },
-    {
-        icon: <SiJavascript size={16} />,
-        title: "JavaScript",
-        subtitle: "Lógica de programação na web",
-        levels: [
-            {
-                name: "Iniciante",
-                filename: "saudacao.js",
-                code: `function saudacao(nome) {
-  return \`Olá, \${nome}!\`;
-}
-
-console.log(saudacao("Ana"));`,
-            },
-            {
-                name: "Intermediário",
-                filename: "api.js",
-                code: `async function buscarUsuario(id) {
-  const res = await fetch(\`/api/users/\${id}\`);
-  if (!res.ok) throw new Error("Falhou");
-  return res.json();
-}`,
-            },
-            {
-                name: "Avançado · Pro",
-                filename: "contador.js",
-                code: `const comContador = (fn) => {
-  let chamadas = 0;
-  return (...args) => {
-    chamadas++;
-    return fn(...args);
-  };
-};`,
-            },
-        ],
-    },
-];
 
 const containerVariants: Variants = {
     hidden: {},
@@ -139,10 +169,18 @@ const containerVariants: Variants = {
 
 const cardVariants: Variants = {
     hidden: { opacity: 0, y: 32 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1],
+        },
+    },
 };
 
 function CourseWindow({ course }: { course: Course }) {
+    const t = useTranslations("Trails");
     const [active, setActive] = useState(0);
     const level = course.levels[active];
 
@@ -151,52 +189,56 @@ function CourseWindow({ course }: { course: Course }) {
             variants={cardVariants}
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
-            className="flex flex-col gap-5 rounded-3xl bg-surface border border-border p-6 transition-shadow duration-300 hover:shadow-[0_20px_45px_-20px_rgba(91,33,182,0.25)]"
+            className="flex min-w-0 flex-col gap-5 rounded-3xl border border-border bg-surface p-4 transition-shadow duration-300 hover:shadow-[0_20px_45px_-20px_rgba(91,33,182,0.25)] sm:p-6"
         >
             <div className="flex items-center gap-3 px-1">
-                <div
-                    className="w-10 h-10 rounded-xl text-primary bg-lavender flex items-center justify-center shrink-0"
-                >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-lavender text-primary">
                     {course.icon}
                 </div>
+
                 <div>
-                    <h3 className="font-bold text-lg text-foreground leading-tight">{course.title}</h3>
-                    <p className="text-xs text-muted">{course.subtitle}</p>
+                    <h3 className="text-lg font-bold leading-tight text-foreground">
+                        {course.title}
+                    </h3>
+
+                    <p className="text-xs text-muted">
+                        {t(`courses.${course.id}.subtitle`)}
+                    </p>
                 </div>
             </div>
 
-            <div className="flex gap-1.5 px-1">
+            <div className="flex flex-wrap gap-1.5 px-1">
                 {course.levels.map((lvl, i) => (
                     <button
-                    type="button"
-                        key={lvl.name}
+                        key={lvl.id}
+                        type="button"
                         onClick={() => setActive(i)}
-                        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                            active === i
-                                ? "bg-primary text-white"
-                                : "bg-surface-alt text-muted hover:text-foreground"
-                        }`}
+                        aria-pressed={active === i}
+                        className={`cursor-pointer rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${active === i ? "bg-primary text-white" : "bg-surface-alt text-muted hover:text-foreground"}`}
                     >
-                        {lvl.name}
+                        {t(`levels.${lvl.id}`)}
                     </button>
                 ))}
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-black/10" style={{ background: "#171225" }}>
-                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                    <span className="ml-2 text-[11px] text-white/40 font-mono">{level.filename}</span>
+            <div className="min-w-0 overflow-hidden rounded-2xl border border-black/10 bg-[#171225]">
+                <div className="flex items-center gap-1.5 border-b border-white/5 px-4 py-2.5">
+                    <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+                    <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
+                    <span className="size-2.5 rounded-full bg-[#28c840]" />
+                    <span className="ml-2 font-mono text-[11px] text-white/40">
+                        {level.filename}
+                    </span>
                 </div>
+
                 <AnimatePresence mode="wait">
                     <motion.pre
-                        key={level.name}
+                        key={`${course.id}-${level.id}`}
                         initial={{ opacity: 0, y: 6 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -6 }}
                         transition={{ duration: 0.25 }}
-                        className="px-4 py-4 text-[12.5px] leading-6 font-mono text-[#e4e1f0] overflow-x-auto"
+                        className="overflow-x-auto px-4 py-4 font-mono text-[12.5px] leading-6 text-[#e4e1f0]"
                     >
                         <HighlightedCode code={level.code} />
                     </motion.pre>
@@ -206,9 +248,9 @@ function CourseWindow({ course }: { course: Course }) {
             <motion.a
                 href="#planos"
                 whileHover={{ x: 4 }}
-                className="self-start flex items-center gap-2 font-bold text-sm px-5 py-2.5 hover:bg-primary hover:text-white hover: text-primary-dark dark:text-white border-primary-dark rounded-full border-2 transition-colors duration-75"
+                className="inline-flex self-start items-center gap-2 rounded-full border-2 border-primary-dark px-5 py-2.5 text-sm font-bold text-primary-dark transition-colors duration-150 hover:bg-primary hover:text-white dark:text-white"
             >
-                Começar trilha de {course.title}
+                {t(`courses.${course.id}.button`)}
                 <FaArrowRight size={12} />
             </motion.a>
         </motion.div>
@@ -216,19 +258,42 @@ function CourseWindow({ course }: { course: Course }) {
 }
 
 export default function Trails() {
+    const t = useTranslations("Trails");
+    const locale = useLocale();
+
+    const courses: Course[] = [
+        {
+            id: "sql",
+            icon: <FaDatabase size={18} />,
+            title: "SQL",
+            levels: sqlLevels,
+        },
+        {
+            id: "javascript",
+            icon: <SiJavascript size={16} />,
+            title: "JavaScript",
+            levels: getJavaScriptLevels(locale),
+        },
+    ];
+
     return (
-        <section id="cursos" className="relative w-full overflow-hidden section-fade-alt ">
+        <section id="cursos" className="relative w-full overflow-hidden section-fade-alt">
             <Container className="py-20 sm:py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-xl mb-12"
+                    className="mb-12 max-w-xl"
                 >
-                    <SectionInfo icon={<FaRoute size={13} />} subTitle="Trilhas de lançamento" title="SQL, JavaScript e muito mais, do zero ao avançado"/>
-                    <p className="text-muted text-base leading-relaxed">
-                        Troque de nível e veja o tipo de código que você vai escrever em cada etapa da trilha.
+                    <SectionInfo
+                        icon={<FaRoute size={13} />}
+                        subTitle={t("subtitle")}
+                        title={t("title")}
+                    />
+
+                    <p className="text-base leading-relaxed text-muted">
+                        {t("description")}
                     </p>
                 </motion.div>
 
@@ -237,10 +302,10 @@ export default function Trails() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-60px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 gap-6 md:grid-cols-2"
                 >
                     {courses.map((course) => (
-                        <CourseWindow key={course.title} course={course} />
+                        <CourseWindow key={course.id} course={course} />
                     ))}
                 </motion.div>
             </Container>

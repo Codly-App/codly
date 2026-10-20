@@ -17,7 +17,6 @@
         "lightTheme": "Ativar tema claro",
         "darkTheme": "Ativar tema escuro"
     },
-
     "Hero": {
         "badge": "Nova trilha de estudos",
         "titleStart": "Aprenda a programar",
@@ -33,7 +32,6 @@
         "streakLabel": "de sequência",
         "mascotAlt": "Kapy, mascote da Codly"
     },
-
     "Method": {
         "subtitle": "O método Codly",
         "title": "Feito para encaixar na sua rotina",
@@ -75,12 +73,62 @@
         "rights": "Todos os direitos reservados.",
         "madeWithLove": "Feito com carinho e capivaras."
     },
-
     "KapyCTA": {
         "title": "Conheça o Kapy e comece a programar hoje!",
         "description": "Seu mascote vai acompanhar cada lição, cada sequência de estudos e cada conquista. Crie sua conta grátis e comece sua primeira lição em poucos minutos.",
         "createAccount": "Criar conta grátis",
         "installApp": "Instalar o app (PWA)",
         "mascotAlt": "Kapy, mascote da Codly"
+    },
+    "PlanComparison": {
+        "subtitle": "Planos Codly",
+        "title": "Uma jornada, duas formas de evoluir",
+        "description": "Comece gratuitamente e aprenda no seu ritmo. Quando quiser explorar ainda mais possibilidades, o Codly Pro estará ao seu lado.",
+        "free": {
+            "name": "Codly Free",
+            "price": "Gratuito",
+            "description": "Para começar sua jornada na programação.",
+            "features": {
+                "languages": "Até 10 linguagens simultâneas",
+                "ranking": "Ranking de XP",
+                "profile": "Perfil personalizado",
+                "groups": "Grupo de desafios com amigos"
+            },
+            "button": "Quero começar gratuitamente"
+        },
+        "pro": {
+            "name": "Codly Pro",
+            "price": "Em breve",
+            "description": "Mais liberdade para evoluir.",
+            "features": {
+                "allFree": "Todos os benefícios do Free",
+                "languages": "Linguagens ilimitadas",
+                "ai": "Assistente com IA",
+                "chat": "Conversas em grupo",
+                "groups": "Múltiplos grupos de desafios"
+            },
+            "button": "Conhecer o lançamento"
+        },
+        "launchNote": "Recursos previstos para o lançamento da plataforma Codly."
+    },
+    "Trails": {
+        "subtitle": "Trilhas de lançamento",
+        "title": "SQL, JavaScript e muito mais, do zero ao avançado",
+        "description": "Troque de nível e veja o tipo de código que você vai escrever em cada etapa da trilha.",
+        "levels": {
+            "beginner": "Iniciante",
+            "intermediate": "Intermediário",
+            "advanced": "Avançado · Pro"
+        },
+        "courses": {
+            "sql": {
+                "subtitle": "Bancos de dados na prática",
+                "button": "Começar trilha de SQL"
+            },
+            "javascript": {
+                "subtitle": "Lógica de programação na web",
+                "button": "Começar trilha de JavaScript"
+            }
+        }
     }
 }
