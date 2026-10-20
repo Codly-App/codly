@@ -14,6 +14,7 @@ type FooterKey =
     | "webPwa"
     | "android"
     | "ios";
+
 type FooterGroupKey = "product" | "company" | "platforms";
 
 type FooterLink = {
@@ -54,9 +55,16 @@ const footerGroups: FooterGroup[] = [
     },
 ];
 
+// Calcula o ano dentro de um escopo de cache do Next.js 16.
+async function getCurrentYear(): Promise<number> {
+    "use cache";
+
+    return new Date().getFullYear();
+}
+
 export default async function Footer() {
     const t = await getTranslations("Footer");
-    const currentYear = new Date().getFullYear();
+    const currentYear = await getCurrentYear();
 
     return (
         <footer className="w-full border-t border-border bg-background">
@@ -97,6 +105,7 @@ export default async function Footer() {
                     <p className="text-xs leading-5 text-muted">
                         © {currentYear} {t("companyName")} {t("rights")}
                     </p>
+
                     <p className="text-xs text-muted">
                         {t("madeWithLove")}
                     </p>
