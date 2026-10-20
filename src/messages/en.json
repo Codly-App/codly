@@ -22,7 +22,7 @@
         "titleStart": "Learn to code",
         "titleHighlight": "every day",
         "titleEnd": "with bite-sized lessons.",
-        "description": "Learn programming from scratch with quick challenges, hands-on activities, XP, leaderboards and daily progress. All at your own pace, in a simple and fun way.",
+        "description": "Learn programming from scratch with quick challenges, hands-on activities, XP, leaderboards, and daily progress. All at your own pace, in a simple and fun way.",
         "startFree": "Get started for free",
         "howItWorks": "How it works",
         "benefit1": "Start for free",
@@ -35,7 +35,7 @@
     "Method": {
         "subtitle": "The Codly method",
         "title": "Designed to fit your daily routine",
-        "description": "Bite-sized lessons, hands-on exercises, and visible progress — no need for lengthy courses to start learning how to code.",
+        "description": "Bite-sized lessons, hands-on exercises, and visible progress — no need for lengthy courses to start learning to code.",
         "cards": {
             "shortLessons": {
                 "title": "5-minute lessons",
@@ -83,7 +83,7 @@
     "PlanComparison": {
         "subtitle": "Codly Plans",
         "title": "One journey, two ways to grow",
-        "description": "Start learning for free at your own pace. When you're ready to explore even more possibilities, Codly Pro will be there for you.",
+        "description": "Start learning for free at your own pace. When you’re ready to explore even more possibilities, Codly Pro will be there for you.",
         "free": {
             "name": "Codly Free",
             "price": "Free",
@@ -112,9 +112,9 @@
         "launchNote": "Features planned for the launch of the Codly platform."
     },
     "Trails": {
-        "subtitle": "Launch learning paths",
+        "subtitle": "Learning paths available at launch",
         "title": "SQL, JavaScript, and much more — from beginner to advanced",
-        "description": "Switch between levels and explore the kind of code you'll write at each stage of your learning path.",
+        "description": "Switch between levels and explore the kind of code you’ll write at each stage of your learning path.",
         "levels": {
             "beginner": "Beginner",
             "intermediate": "Intermediate",
@@ -128,6 +128,49 @@
             "javascript": {
                 "subtitle": "Programming logic for the web",
                 "button": "Start the JavaScript learning path"
+            }
+        }
+    },
+    "GamificationPhoneMockup": {
+        "subtitle": "Gamification & Friends Leaderboard",
+        "title": "Turn your study routine into a game",
+        "description": "This is the home screen waiting for you every day: your streak, daily goal, and the lesson you left off on — making it easy to keep learning.",
+        "moreDetails": "Learn more",
+        "features": {
+            "dailyGoal": {
+                "title": "Daily goals",
+                "description": "Choose to complete 1, 2, or 3 lessons a day and track your progress."
+            },
+            "streak": {
+                "title": "Learning streaks",
+                "description": "Keep your momentum going by tracking how many days in a row you study."
+            },
+            "achievements": {
+                "title": "Achievements",
+                "description": "Your first lesson, a 7-day streak, 1,000 XP, or a completed course."
+            },
+            "friends": {
+                "title": "Friends & leaderboards",
+                "description": "Add friends and compare your XP rankings."
+            }
+        },
+        "phone": {
+            "greeting": "Good morning,",
+            "streakDays": "day streak",
+            "goal": "goal",
+            "continueLearning": "Pick up where you left off",
+            "lessonTitle": "SQL JOINs",
+            "lessonProgress": "Lesson 4 of 6 · +40 XP",
+            "ranking": "3rd on the leaderboard",
+            "weeklyXP": "1,860 XP this week",
+            "weekDays": {
+                "monday": "M",
+                "tuesday": "T",
+                "wednesday": "W",
+                "thursday": "T",
+                "friday": "F",
+                "saturday": "S",
+                "sunday": "S"
             }
         }
     }

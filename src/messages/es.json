@@ -112,7 +112,7 @@
         "launchNote": "Funciones previstas para el lanzamiento de la plataforma Codly."
     },
     "Trails": {
-        "subtitle": "Rutas de aprendizaje de lanzamiento",
+        "subtitle": "Rutas de aprendizaje disponibles en el lanzamiento",
         "title": "SQL, JavaScript y mucho más, desde cero hasta avanzado",
         "description": "Cambia de nivel y descubre el tipo de código que escribirás en cada etapa de tu ruta de aprendizaje.",
         "levels": {
@@ -128,6 +128,49 @@
             "javascript": {
                 "subtitle": "Lógica de programación para la web",
                 "button": "Comenzar la ruta de JavaScript"
+            }
+        }
+    },
+    "GamificationPhoneMockup": {
+        "subtitle": "Gamificación y clasificación de amigos",
+        "title": "Convierte tu rutina de estudio en un juego",
+        "description": "Esta es la pantalla de inicio que te espera cada día: tu racha, tu meta diaria y la lección donde te quedaste, para seguir aprendiendo fácilmente.",
+        "moreDetails": "Más información",
+        "features": {
+            "dailyGoal": {
+                "title": "Meta diaria",
+                "description": "Elige completar 1, 2 o 3 lecciones al día y sigue tu progreso."
+            },
+            "streak": {
+                "title": "Racha de aprendizaje",
+                "description": "Mantén el ritmo contando los días consecutivos que estudias."
+            },
+            "achievements": {
+                "title": "Logros",
+                "description": "Tu primera lección, una racha de 7 días, 1000 XP o un curso completado."
+            },
+            "friends": {
+                "title": "Amigos y clasificación",
+                "description": "Añade amigos y compara sus puntuaciones de XP."
+            }
+        },
+        "phone": {
+            "greeting": "Buenos días,",
+            "streakDays": "días de racha",
+            "goal": "meta",
+            "continueLearning": "Continúa donde lo dejaste",
+            "lessonTitle": "JOINs en SQL",
+            "lessonProgress": "Lección 4 de 6 · +40 XP",
+            "ranking": "3.º en la clasificación",
+            "weeklyXP": "1860 XP esta semana",
+            "weekDays": {
+                "monday": "L",
+                "tuesday": "M",
+                "wednesday": "M",
+                "thursday": "J",
+                "friday": "V",
+                "saturday": "S",
+                "sunday": "D"
             }
         }
     }

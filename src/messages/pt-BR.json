@@ -130,5 +130,48 @@
                 "button": "Começar trilha de JavaScript"
             }
         }
+    },
+    "GamificationPhoneMockup": {
+        "subtitle": "Gamificação e ranking de amigos",
+        "title": "Sua rotina de estudo, gamificada",
+        "description": "Essa é a tela inicial que espera por você todos os dias: sequência de estudos, meta diária e a lição de onde parou — tudo para facilitar sua evolução.",
+        "moreDetails": "Saiba mais",
+        "features": {
+            "dailyGoal": {
+                "title": "Meta diária",
+                "description": "Escolha estudar 1, 2 ou 3 lições por dia e acompanhe sua meta."
+            },
+            "streak": {
+                "title": "Sequência de estudos",
+                "description": "Mantenha o ritmo acompanhando quantos dias seguidos você estudou."
+            },
+            "achievements": {
+                "title": "Conquistas",
+                "description": "Primeira lição, 7 dias de sequência, 1.000 XP e curso concluído."
+            },
+            "friends": {
+                "title": "Amigos e ranking",
+                "description": "Adicione amigos e compare suas pontuações de XP."
+            }
+        },
+        "phone": {
+            "greeting": "Bom dia,",
+            "streakDays": "dias de sequência",
+            "goal": "meta",
+            "continueLearning": "Continue de onde parou",
+            "lessonTitle": "JOINs no SQL",
+            "lessonProgress": "Lição 4 de 6 · +40 XP",
+            "ranking": "3º no ranking",
+            "weeklyXP": "1.860 XP esta semana",
+            "weekDays": {
+                "monday": "S",
+                "tuesday": "T",
+                "wednesday": "Q",
+                "thursday": "Q",
+                "friday": "S",
+                "saturday": "S",
+                "sunday": "D"
+            }
+        }
     }
 }

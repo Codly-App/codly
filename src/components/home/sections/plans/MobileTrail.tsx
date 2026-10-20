@@ -16,7 +16,7 @@ export default function MobileTrail({ unlocks, checkpoint }: { unlocks: number; 
     return (
         <div className="relative mx-auto max-w-sm rounded-3xl border border-border bg-surface p-5">
             {/* trilha de fundo + preenchimento */}
-            <div className="absolute bottom-[calc(1.25rem+20px)] left-[calc(1.25rem+18px)] top-[calc(1.25rem+20px)] w-1 rounded-full bg-border">
+            <div className="absolute bottom-10 left-9.5 top-10 w-1 rounded-full bg-border">
                 <motion.div
                     className="w-full rounded-full bg-primary"
                     animate={{ height: `${fillPct}%` }}
