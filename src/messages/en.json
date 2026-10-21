@@ -173,5 +173,74 @@
                 "sunday": "S"
             }
         }
+    },
+    "PlansTrail": {
+        "subtitle": "Plans",
+        "title": "How far do you want to go?",
+        "description": "Each plan unlocks part of the learning path. Choose a plan and see how far you can go. Final pricing is still being determined.",
+        "mapAriaLabel": "Learning path map",
+        "selector": {
+            "demo": "7 days free",
+            "basic": "Most popular",
+            "pro": "Full access"
+        },
+        "zones": {
+            "beginner": {
+                "label": "Beginner",
+                "description": "Lessons 1 to 6"
+            },
+            "intermediate": {
+                "label": "Intermediate",
+                "description": "Lessons 7 to 12"
+            },
+            "advanced": {
+                "label": "Advanced · Pro",
+                "description": "Lessons 13 to 18"
+            }
+        },
+        "plans": {
+            "demo": {
+                "name": "Demo",
+                "tagline": "Try it with no commitment",
+                "price": "Free",
+                "period": "7 days",
+                "checkpoint": "Your trial ends here",
+                "cta": "Start free trial",
+                "features": {
+                    "one": "Beginner learning paths",
+                    "two": "Saved progress",
+                    "three": "XP and daily streaks",
+                    "four": "Web and PWA access"
+                }
+            },
+            "basic": {
+                "name": "Basic",
+                "tagline": "Build a consistent learning routine",
+                "price": "TBD",
+                "period": "/ month",
+                "checkpoint": "Your plan ends here",
+                "cta": "Choose Basic",
+                "features": {
+                    "one": "SQL and JavaScript through intermediate level",
+                    "two": "Full progress tracking and history",
+                    "three": "Goals, XP, and achievements",
+                    "four": "Friends leaderboard"
+                }
+            },
+            "pro": {
+                "name": "Pro",
+                "tagline": "Full access to learning paths",
+                "price": "TBD",
+                "period": "/ month",
+                "checkpoint": "Learning path completed!",
+                "cta": "Choose Pro",
+                "features": {
+                    "one": "All content, including advanced lessons",
+                    "two": "Combined Pro challenges",
+                    "three": "Everything in the Basic plan",
+                    "four": "Upcoming premium features"
+                }
+            }
+        }
     }
 }

@@ -173,5 +173,74 @@
                 "sunday": "D"
             }
         }
+    },
+    "PlansTrail": {
+        "subtitle": "Planos",
+        "title": "Até onde você quer chegar?",
+        "description": "Cada plano libera uma parte da trilha. Escolha um e veja até onde o caminho vai. Preços finais em definição.",
+        "mapAriaLabel": "Mapa da trilha de lições",
+        "selector": {
+            "demo": "Grátis por 7 dias",
+            "basic": "Mais popular",
+            "pro": "Acesso total"
+        },
+        "zones": {
+            "beginner": {
+                "label": "Iniciante",
+                "description": "Lições 1 a 6"
+            },
+            "intermediate": {
+                "label": "Intermediário",
+                "description": "Lições 7 a 12"
+            },
+            "advanced": {
+                "label": "Avançado · Pro",
+                "description": "Lições 13 a 18"
+            }
+        },
+        "plans": {
+            "demo": {
+                "name": "Demo",
+                "tagline": "Experimente sem compromisso",
+                "price": "Grátis",
+                "period": "7 dias",
+                "checkpoint": "Seu teste termina aqui",
+                "cta": "Começar demo",
+                "features": {
+                    "one": "Trilhas de nível iniciante",
+                    "two": "Progresso salvo",
+                    "three": "XP e sequência diária",
+                    "four": "Acesso via web e PWA"
+                }
+            },
+            "basic": {
+                "name": "Básico",
+                "tagline": "Para estudar com consistência",
+                "price": "A definir",
+                "period": "/ mês",
+                "checkpoint": "Seu plano vai até aqui",
+                "cta": "Assinar Básico",
+                "features": {
+                    "one": "SQL e JavaScript até intermediário",
+                    "two": "Progresso completo e histórico",
+                    "three": "Metas, XP e conquistas",
+                    "four": "Ranking entre amigos"
+                }
+            },
+            "pro": {
+                "name": "Pro",
+                "tagline": "Acesso completo às trilhas",
+                "price": "A definir",
+                "period": "/ mês",
+                "checkpoint": "Trilha completa!",
+                "cta": "Assinar Pro",
+                "features": {
+                    "one": "Todo o conteúdo, incluindo Avançado",
+                    "two": "Desafios Pro combinados",
+                    "three": "Tudo do plano Básico",
+                    "four": "Recursos premium futuros"
+                }
+            }
+        }
     }
 }

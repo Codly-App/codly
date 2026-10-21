@@ -173,5 +173,74 @@
                 "sunday": "D"
             }
         }
+    },
+    "PlansTrail": {
+        "subtitle": "Planes",
+        "title": "¿Hasta dónde quieres llegar?",
+        "description": "Cada plan desbloquea una parte de la ruta de aprendizaje. Elige uno y descubre hasta dónde puedes llegar. Los precios definitivos aún están por determinarse.",
+        "mapAriaLabel": "Mapa de la ruta de aprendizaje",
+        "selector": {
+            "demo": "7 días gratis",
+            "basic": "Más popular",
+            "pro": "Acceso completo"
+        },
+        "zones": {
+            "beginner": {
+                "label": "Principiante",
+                "description": "Lecciones 1 a 6"
+            },
+            "intermediate": {
+                "label": "Intermedio",
+                "description": "Lecciones 7 a 12"
+            },
+            "advanced": {
+                "label": "Avanzado · Pro",
+                "description": "Lecciones 13 a 18"
+            }
+        },
+        "plans": {
+            "demo": {
+                "name": "Demo",
+                "tagline": "Pruébalo sin compromiso",
+                "price": "Gratis",
+                "period": "7 días",
+                "checkpoint": "Tu prueba termina aquí",
+                "cta": "Comenzar prueba gratis",
+                "features": {
+                    "one": "Rutas de nivel principiante",
+                    "two": "Progreso guardado",
+                    "three": "XP y racha diaria",
+                    "four": "Acceso desde la web y PWA"
+                }
+            },
+            "basic": {
+                "name": "Básico",
+                "tagline": "Para estudiar con constancia",
+                "price": "Por definir",
+                "period": "/ mes",
+                "checkpoint": "Tu plan llega hasta aquí",
+                "cta": "Elegir Básico",
+                "features": {
+                    "one": "SQL y JavaScript hasta nivel intermedio",
+                    "two": "Seguimiento completo e historial",
+                    "three": "Metas, XP y logros",
+                    "four": "Clasificación entre amigos"
+                }
+            },
+            "pro": {
+                "name": "Pro",
+                "tagline": "Acceso completo a las rutas",
+                "price": "Por definir",
+                "period": "/ mes",
+                "checkpoint": "¡Ruta completada!",
+                "cta": "Elegir Pro",
+                "features": {
+                    "one": "Todo el contenido, incluido el nivel avanzado",
+                    "two": "Desafíos Pro combinados",
+                    "three": "Todo lo incluido en el plan Básico",
+                    "four": "Próximas funciones prémium"
+                }
+            }
+        }
     }
 }
